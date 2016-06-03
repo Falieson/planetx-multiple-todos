@@ -24,7 +24,7 @@
 
 # Documentation
 ### Meteor
-* [Material UI for React (Link, 20160601)](https://www.npmjs.com/package/material-ui)
+* [Material UI for React (Link, 20160601)](https://github.com/callemall/material-ui)
 * [Large Meteor 1.3 App Structure (Link, 20160601)](http://guide.meteor.com/structure.html)
 * [Multiple Applications (Link, 20160601)](http://guide.meteor.com/structure.html#splitting-your-app)
 

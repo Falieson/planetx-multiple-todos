@@ -9,8 +9,9 @@
 # II. TOC
 <ol start="0">
   <li>Setup</li>
+  <li>Hello World</li>
 </ol>
-1. Hello World
+1. _
 1. Task: Components
 1. Task: Layouts & Header
 1. Task: Collections API
@@ -20,20 +21,20 @@
 1. Router
 1. Accounts & Profile
 
-# III. Current: (0) Setup
+# III. Current:
+## 1. Hello World
+* Simple Hello World
+* Material Hello World
+
+# IV. History
+### 0. Setup
 * App Structure
   1. files are blank, just touched
   1. some test files maybe removed or unified
 * Packages
 * Initial Readme.md & Project.md
 
-# IV. History
-
 # V. Plan
-## 1. Hello World
-* Material Page Template
-* Material Hello World
-
 ## 2. Task: Components
 Mock-data, Tests, React, Material
 * Task List

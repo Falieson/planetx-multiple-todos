@@ -5,7 +5,7 @@ Final Structure based on collaboration with Stackoverflow and Gitter/meteor#mete
 ```
 client/                        # client entry point, imports all client code
   main.html                    # react-root node, imports roboto for material
-  main.js                      # imports ui
+  main.jsx                     # imports ui
   main.css                     # global css
 imports/
   startup/
