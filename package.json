@@ -1,0 +1,57 @@
+{
+  "name": "planetx-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate for large scale app building with React, Apollo, Meteor, and Material",
+  "author": "Falieson <falieson@gmail.com> ",
+  "contributors": [
+    {
+      "name": "Falieson",
+      "email": "falieson@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Falieson/planetx-boilerplate"
+  },
+  "bugs": {
+    "url": "https://github.com/Falieson/planetx-boilerplate/issues"
+  },
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "apollo-client": "^0.3.12",
+    "babel-runtime": "^6.9.2",
+    "bluebird": "^3.4.0",
+    "classnames": "^2.2.5",
+    "cls-bluebird": "^1.0.1",
+    "continuation-local-storage": "^3.1.7",
+    "dataloader": "^1.2.0",
+    "express": "^4.13.4",
+    "graphql": "^0.5.0",
+    "graphql-tools": "^0.5.0",
+    "http-proxy-middleware": "^0.15.2",
+    "lodash": "^4.13.1",
+    "material-ui": "^0.15.0",
+    "meteor-babel": "^0.10.7",
+    "meteor-node-stubs": "^0.2.3",
+    "react": "^15.1.0",
+    "react-addons-pure-render-mixin": "^15.1.0",
+    "react-apollo": "^0.3.7",
+    "react-dom": "^15.1.0",
+    "react-paginate": "^2.0.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0",
+    "request-promise": "^3.0.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "faker": "^3.1.0"
+  },
+  "private": true,
+  "license": "MIT"
+}

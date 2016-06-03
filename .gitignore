@@ -1,0 +1,5 @@
+node_modules/
+meteor_packages.json
+.trash/
+.meteor/local/
+npm-debug.log
