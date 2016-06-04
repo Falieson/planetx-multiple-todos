@@ -3,23 +3,26 @@
 1. Project.md - Project Current Stage, Plan, History
 1. References.md - Tutorials and Repos
 1. Environment.md - Some Regex and Mods from my Env
-1. Structure.md
+1. Structure.md - Application Structure
+1. CommitJournal.md - Some notes in addition to each message
 1. .trash/ - Outside of scope of current commit
 
 # II. TOC
 <ol start="0">
   <li>Setup</li>
-  <li>Hello World</li>
+  <li><strong><u>Hello World</u></strong></li>
 </ol>
-1. _
-1. Task: Components
-1. Task: Layouts & Header
-1. Task: Collections API
-1. Task: Forms and Events
-1. Task: Update and Remove
-1. Task: Temporary UI State
-1. Router
-1. Accounts & Profile
+<ol start="2">
+  <li>Task: Components</li>
+  <li>Task: Layouts & Header</li>
+  <li>Task: Collections API</li>
+  <li>Task: Forms and Events</li>
+  <li>Task: Update and Remove</li>
+  <li>Task: Temporary UI State</li>
+  <li>Router</li>
+  <li>Accounts & Profile</li>
+</ol>
+
 
 # III. Current:
 ## 1. Hello World
@@ -86,6 +89,7 @@ Mock-data, Tests, React, Material
   * Loading State
   * Chromatica - UI State Testing
   * Package Tasks & Accounts
+  * Animations
 
 * Mobile
   * Mobile: Touch Layout

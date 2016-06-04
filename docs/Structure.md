@@ -17,7 +17,6 @@ imports/
     server/
       fixtures.js              # fill the DB with example data on startup
       index.js                 # server entry point like API
-
   api/
     api.js                     # client & server api calls like methods
     api-server.js              # server only api calls like publications
@@ -25,11 +24,12 @@ imports/
       server/
         publications.js        # all list-related publications
         publications.tests.js  # tests for the list publications
-      lists.js                 # definition of the Lists collection
-      lists.tests.js           # tests for the behavior of that collection
+      _lists.tests.js          # index/import of all the tests
+      collections.js           # definition of the Lists collection
       methods.js               # methods related to lists
       methods.tests.js         # tests for those methods
-      methods-pubsub.tests.js  # tests for methods used in both pub & sub
+      methods-pubsub.js        # methods used in both pub&sub
+      methods-pubsub.tests.js  # tests for pubsub methods
       subscriptions.js         # all list-related subscriptions
       subscriptions.tests.js   # tests for the list subscriptions
   ui/
@@ -52,7 +52,7 @@ imports/
       Lists.test.js
     App.jsx
     App.test.js
-
+packages/                      # private, move imports here by domain
 server/
   main.js                      # server entry point, imports startup/server/
 

@@ -42,8 +42,11 @@ $ ln -s .meteor/packages meteor_packages.json
 ### Too Advanced? Start With:
 * Meteor's:  [Simple-React-Todos#a917718](https://github.com/meteor/simple-todos-react/tree/a91771830ad7e40b61bc93988e9c954e75d7a590)
 * Apollostack's:  [Discourse-Demo#5d045ff](https://github.com/apollostack/apollo-demo/tree/5d045ff807a08a754628ad9edf8e17526d6ceac0)
+* More references in `/docs/References.md`
 
 ### Later Versions (time and interest willing)
+For more, look at `docs/Proejct.md` and search for `Gold Plating`
+
  * create History page and dependencies
  * create AdvancedList page and dependencies
  * convert Lists & Tasks into Tasks package
