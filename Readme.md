@@ -36,7 +36,7 @@ $ cp -rf .boilerplate todos
 ##### Symlinks
 If you are making changes to the code (using this as a boilerplate for your project) and make changes to your meteor packages it is sometimes handy to have a symlink to it in your directory. Create it in your root directory by running
 ```
-$ ln -s .meteor/packages meteor_packages.json
+$ ln -s .meteor/packages meteor_packages
 ```
 
 ### Too Advanced? Start With:
