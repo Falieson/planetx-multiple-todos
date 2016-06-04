@@ -1,6 +1,20 @@
 #2. Task: Components #
-### 2.B) Simple Test for Task Item
+### 2.C) Simple Test for Task Item
 commit: `{this}`
+
+Message: `2. Simple Factory for Simple Task Item`
+
+Notes: `Very basic factory`
+
+Files:
+* `/imports/ui/components/taskItem/Item.test.js`
+
+References:
+* Meteor's Guide [Generating Test Data](http://guide.meteor.com/testing.html#generating-test-data) - Viewed 20160602, Authored 2016????
+
+
+### 2.B) Simple Test for Task Item
+commit: `#35b9e03`
 
 Message: `2. Simple Test for Simple Task Item`
 
