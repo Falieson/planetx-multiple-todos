@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import Hello from './components/Hello.jsx';
+import HelloMessage from './components/HelloMessage.jsx';
 
 // App component - represents the whole app
 class App extends Component {
@@ -15,16 +17,16 @@ class App extends Component {
     };
   }
 
-  renderHello() {
+  renderMessage() {
     let message = this.props.message;
-    return (<Hello message={message} />);
+    return (<HelloMessage message={message} />);
   }
 
   render() {
     return (
-      <div className="container">
-        {this.renderHello()}
-      </div>
+       <MuiThemeProvider muiTheme={getMuiTheme()} className="container">
+        {this.renderMessage()}
+      </MuiThemeProvider>
     );
   }
 }
@@ -35,6 +37,49 @@ App.propTypes = {
 
 export default createContainer(() => {
   return {
-    message: "World!"
+    message: "Hello World!"
   };
 }, App);
+
+
+
+
+
+
+// # ~Falieson:20160603
+//
+// import React, { Component, PropTypes } from 'react';
+// import ReactDOM from 'react-dom';
+// import { Meteor } from 'meteor/meteor';
+// import { createContainer } from 'meteor/react-meteor-data';
+//
+// import HelloPage from './pages/Hello.jsx';
+//
+// // App component - represents the whole app
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//
+//     this.state = {
+//       message: false,
+//     };
+//   }
+//
+//   render() {
+//     return (
+//       <div className="container">
+//         <HelloPage message={message}/>
+//       </div>
+//     );
+//   }
+// }
+//
+// App.propTypes = {
+//   message: PropTypes.string.isRequired,
+// };
+//
+// export default createContainer(() => {
+//   return {
+//     message: "Hello World"
+//   };
+// }, App);

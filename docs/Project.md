@@ -3,7 +3,8 @@
 1. Project.md - Project Current Stage, Plan, History
 1. References.md - Tutorials and Repos
 1. Environment.md - Some Regex and Mods from my Env
-1. Structure.md
+1. Structure.md - Application Structure
+1. CommitJournal.md - Some notes in addition to each message
 1. .trash/ - Outside of scope of current commit
 
 # II. TOC
