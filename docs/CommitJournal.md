@@ -1,38 +1,47 @@
-#2. Task: Components #
-### 2.C) Simple Test for Task Item
+# 2. Task: Components #
+### 2.B.1) Material Task Item
 commit: `{this}`
 
-Message: `2. Simple Factory for Simple Task Item`
+Message: `2.B.1) Material Task Item`
+
+Notes:
+* `Materialized the Task Item`
+* `Updated Project.md and this CJ to better represent this branches workflow`
+
+Files:  `/imports/ui/components/taskItem/Item.jsx`
+
+References:
+* [Material-UI (React)](http://www.material-ui.com/#/components/list) - Viewed 20160604, Authored 2016????
+
+### 2.A.3) Simple Test for Task Item
+commit: `#1a3d9ce`
+
+Message: `2.A.3) Simple Factory for Simple Task Item`
 
 Notes: `Very basic factory`
 
-Files:
-* `/imports/ui/components/taskItem/Item.test.js`
+Files:  `/imports/ui/components/taskItem/Item.test.js`
 
 References:
 * Meteor's Guide [Generating Test Data](http://guide.meteor.com/testing.html#generating-test-data) - Viewed 20160602, Authored 2016????
 
-
-### 2.B) Simple Test for Task Item
+### 2.A.2) Simple Test for Task Item
 commit: `#35b9e03`
 
-Message: `2. Simple Test for Simple Task Item`
+Message: `2.A.2) Simple Test for Simple Task Item`
 
 Notes: `Very basic test`
 
-Files:
-* `/imports/ui/components/taskItem/Item.test.js`
+Files: `/imports/ui/components/taskItem/Item.test.js`
 
 References:
 * Meteor's React Tutorial [TodoItem.tests.js](https://github.com/meteor/todos/blob/64443420030eeaa16a6e7d38743655ee7522d65c/imports/ui/components/TodoItem.tests.js) - Viewed 20160604, Authored 20160526
 * Meteor's Guide [Simple React Unit Testing](http://guide.meteor.com/testing.html#simple-react-unit-test) - Viewed 20160602, Authored 2016????
 
-
-#2. Task: Components #
-### 2.A) Simple Task
+### 2.A.1) Simple Task
 commit: `#c598f15`
 
-Message: `2. Simple List of Tasks`
+Message: `2.A.1) Simple List of Tasks`
 
 Notes: `Pretty much straight from the React tutorial`
 
@@ -44,7 +53,7 @@ References:
 * Meteor's React [Tutorial: Testing](https://www.meteor.com/tutorials/react/testing)
 
 
-#1. Hello World #
+# 1. Hello World #
 ### 1.B) Material Hello
 commit: `#1e0dbdd`
 

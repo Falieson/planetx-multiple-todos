@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+import {ListItem} from 'material-ui/List';
+import Toggle from 'material-ui/Toggle';
 
 // TaskItem component - represents a single task item
 export default class TaskItem extends Component {
   render() {
     return (
-      <li>{this.props.task.text}</li>
+      <ListItem primaryText={this.props.task.text} rightToggle={<Toggle />} />
     );
   }
 }
