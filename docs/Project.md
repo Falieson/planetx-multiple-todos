@@ -1,19 +1,10 @@
-# I. Project Structure
-1. Readme.md - Summary of Application
-1. Project.md - Project Current Stage, Plan, History
-1. References.md - Tutorials and Repos
-1. Environment.md - Some Regex and Mods from my Env
-1. Structure.md - Application Structure
-1. CommitJournal.md - Some notes in addition to each message
-1. .trash/ - Outside of scope of current commit
-
-# II. TOC
+# I. TOC
 <ol start="0">
   <li>Setup</li>
-  <li><strong><u>Hello World</u></strong></li>
+  <li>Hello World</li>
+  <li><strong><u>Task: Components</u></strong></li>
 </ol>
-<ol start="2">
-  <li>Task: Components</li>
+<ol start="3">
   <li>Task: Layouts & Header</li>
   <li>Task: Collections API</li>
   <li>Task: Forms and Events</li>
@@ -24,26 +15,20 @@
 </ol>
 
 
-# III. Current:
-## 1. Hello World
-* Simple Hello World
-* Material Hello World
-
-# IV. History
-### 0. Setup
-* App Structure
-  1. files are blank, just touched
-  1. some test files maybe removed or unified
-* Packages
-* Initial Readme.md & Project.md
-
-# V. Plan
-## 2. Task: Components
-Mock-data, Tests, React, Material
+# II. Current: (2) Task: Components
 * Task List
+  * Mock-data
+  * Tests
+  * React
+  * Material
 * Task Item
+  * Mock-data
+  * Tests
+  * React
+  * Material
 
-## 3. Task: Layouts & Header
+# III. Plan
+### 3. Task: Layouts & Header
 * Component
   * Header: Create Simple Header
 
@@ -51,7 +36,7 @@ Mock-data, Tests, React, Material
   * Task Lists
   * Main Layout: Header and Content
 
-## 4. Task: Collections
+### 4. Task: Collections
 * Apollo Server
   * Setup
   * Connect to Mongo
@@ -61,18 +46,18 @@ Mock-data, Tests, React, Material
   * Task Lists
   * Task Items
 
-## 5. Task: Forms and Events
-## 6. Task: Update and Remove Tasks
-## 7. Task: Temporary UI State
+### 5. Task: Forms and Events
+### 6. Task: Update and Remove Tasks
+### 7. Task: Temporary UI State
 
-## 8. Router
+### 8. Router
 * Setup react-router
 * Render Home
 
-## 9. Accounts
+### 9. Accounts
 * Components
-  * Account Auth
-  * Account Profile
+  * User Auth (Login/Register)
+  * User Profile
   * Header: Update for Accounts
 
 * API
@@ -83,12 +68,34 @@ Mock-data, Tests, React, Material
   * Render Auth Page
   * Render Profile Page
 
+# IV. History
+### 0. Setup
+* App Structure
+  1. files are blank, just touched
+  1. some test files maybe removed or unified
+* Packages
+* Initial Readme.md & Project.md
+
+### 1. Hello World
+* Simple Hello World
+* Material Hello World
+
+
+# V. Project Structure
+1. Readme.md - Summary of Application
+1. Project.md - Project Current Stage, Plan, History
+1. References.md - Tutorials and Repos
+1. Environment.md - Some Regex and Mods from my Env
+1. Structure.md - Application Structure
+1. CommitJournal.md - Some notes in addition to each message
+1. .trash/ - Outside of scope of current commit
+
 
 # VI. Gold Plating
 * UI
   * Loading State
   * Chromatica - UI State Testing
-  * Package Tasks & Accounts
+  * Package Tasks, Accounts, & Profile
   * Animations
 
 * Mobile

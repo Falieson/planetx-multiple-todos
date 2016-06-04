@@ -1,6 +1,19 @@
-#1. Hello World#
-## 1.B) Material Hello
-commit: `{thiscommit}`
+#2. Task: Components #
+### 2.A) Simple Task
+commit: `{this}`
+
+Message: `2. Simple list of Tasks`
+
+Notes: `Pretty much straight from the React tutorial`
+
+Files:
+* `/imports/ui/App.jsx`
+* `/imports/ui/components/taskItem/Item.jsx`
+
+
+#1. Hello World #
+### 1.B) Material Hello
+commit: `#1e0dbdd`
 
 Message: `1. Material Hello World`
 
@@ -12,7 +25,7 @@ Files:
 * `/imports/ui/components/HelloMessage.jsx`
 
 
-## 1.A) Simple Hello
+### 1.A) Simple Hello
 commit: `#24643d98`
 
 Message: `1. Simple Hello World`
