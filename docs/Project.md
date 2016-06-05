@@ -22,31 +22,24 @@
 
 
 # II. Current: (2) Task: Components
-A) Simple Task Item
-  1. Simple Task Item
-  1. Test: Render=> single item
-  1. Factory:       single item
-
-B) Material Task Items
-  1. Material:      Task Item
-  1. Factory:       multiple items
-  1. Test: Render=> multiple items
-  1. Factory:       completed item
-  1. Test: Render=> "task completed" toggler
-
-C) Material Task List
-  1. Material:      Task List
-  1. Test: Render=> List Container
-  1. Factory:       multiple items in list
-  1. Test: Render=> List Items
-
-D) Task Lists page
-  1. Material:      Task Lists (pg)
-  1. Factory:       multiple lists
-  1. Test: Render=> multiple lists
+### B) Material Task Items
+  1. Material:            Task Item
+  1. Test: Render=>       "task completed" toggler
 
 
 # III. Plan
+### 2. Task: Components
+##### C) Material Task List
+  1. Material:            Task List
+  1. Test: Render=>       List Container
+  1. Factory:             multiple items in list
+  1. Test: Render=>       List Items
+
+##### D) Task Lists page
+  1. Material:            Task Lists (pg)
+  1. Factory:             multiple lists
+  1. Test: Render=>       multiple lists
+
 ### 3. Task: Layouts & Header
 * Component
   * Header: Create Simple Header
@@ -54,7 +47,6 @@ D) Task Lists page
 * Layouts
   * Task Lists
   * Main Layout: Header and Content
-
 
 ### 4. Task: Collections
 * Apollo Server
@@ -65,7 +57,6 @@ D) Task Lists page
   * Setup/Thread API
   * Task Lists
   * Task Items
-
 
 ### 5. Task: Forms and Events
 ### 6. Task: Update and Remove Tasks
@@ -101,15 +92,21 @@ D) Task Lists page
 * Simple Hello World
 * Material Hello World
 
+### 2. Task: Components
+##### A) Simple Task Item
+  1. Simple Task Item
+  1. Test: Render=>     single item
+  1. Factory:           single item
+
 
 # V. Project Structure
-1. Readme.md - Summary of Application
-1. Project.md - Project Current Stage, Plan, History
-1. References.md - Tutorials and Repos
-1. Environment.md - Some Regex and Mods from my Env
-1. Structure.md - Application Structure
-1. CommitJournal.md - Some notes in addition to each message
-1. .trash/ - Outside of scope of current commit
+1. Readme.md         - Summary of Application
+1. Project.md        - Project Current Stage, Plan, History
+1. References.md     - Tutorials and Repos
+1. Environment.md    - Some Regex and Mods from my Env
+1. Structure.md      - Application Structure
+1. CommitJournal.md  - Beyond a log message
+1. .trash/           - Outside of scope of current commit
 
 
 # VI. Gold Plating

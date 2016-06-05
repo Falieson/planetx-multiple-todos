@@ -1,6 +1,20 @@
 # 2. Task: Components #
-### 2.B.1) Material Task Item
+### 2.B) Material Task Items
+
+##### 2.B.2) Test that Task Item is checkable
 commit: `{this}`
+
+Message: `** 2.B.2) Test that Task Item is checkable/completable`
+
+Notes: `incomplete commit: haven't figured out how to detect the material-ui checkbox is checked`
+
+Files:  `/imports/ui/components/taskItem/Item.test.jsx`
+
+References:
+* [Material-UI: Toggler](http://www.material-ui.com/#/components/toggle)
+
+##### 2.B.1) Material Task Item
+commit: `#2bbdc55`
 
 Message: `2.B.1) Material Task Item`
 
@@ -11,9 +25,11 @@ Notes:
 Files:  `/imports/ui/components/taskItem/Item.jsx`
 
 References:
-* [Material-UI (React)](http://www.material-ui.com/#/components/list) - Viewed 20160604, Authored 2016????
+* [Material-UI Lists](http://www.material-ui.com/#/components/list) - Viewed 20160604, Authored 2016????
 
-### 2.A.3) Simple Test for Task Item
+### 2.A) Simple Task Item
+
+##### 2.A.3) Simple Factory for Task Item
 commit: `#1a3d9ce`
 
 Message: `2.A.3) Simple Factory for Simple Task Item`
@@ -25,7 +41,7 @@ Files:  `/imports/ui/components/taskItem/Item.test.js`
 References:
 * Meteor's Guide [Generating Test Data](http://guide.meteor.com/testing.html#generating-test-data) - Viewed 20160602, Authored 2016????
 
-### 2.A.2) Simple Test for Task Item
+##### 2.A.2) Simple Test for Task Item
 commit: `#35b9e03`
 
 Message: `2.A.2) Simple Test for Simple Task Item`
@@ -38,7 +54,7 @@ References:
 * Meteor's React Tutorial [TodoItem.tests.js](https://github.com/meteor/todos/blob/64443420030eeaa16a6e7d38743655ee7522d65c/imports/ui/components/TodoItem.tests.js) - Viewed 20160604, Authored 20160526
 * Meteor's Guide [Simple React Unit Testing](http://guide.meteor.com/testing.html#simple-react-unit-test) - Viewed 20160602, Authored 2016????
 
-### 2.A.1) Simple Task
+##### 2.A.1) Simple Task
 commit: `#c598f15`
 
 Message: `2.A.1) Simple List of Tasks`

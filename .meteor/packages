@@ -11,7 +11,7 @@ mongo                   # The database Meteor supports right now
 #tracker                # Meteor's client-side reactive programming library
 #reactive-var           # Reactive variable for tracker
 react-meteor-data       # Recommended meteor data library
-#jquery                 # Helpful client-side library
+jquery                  # Helpful client-side library
 
 # Build
 standard-minifier-css   # CSS minifier run for production mode
