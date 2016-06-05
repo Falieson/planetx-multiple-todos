@@ -1,5 +1,3 @@
-<strong><h1>Current Branch: '2/task_components'
-
 # About
 This application can be used as a boilerplate for starting a large scale meteor application. The major libraries are: React, Apollo, & Material. The imports directory contains a basic Todos application which can be used as example / sample code for your app. Other tutorials typically focus on a SPA application, but this is designed to be a Multipage boilerplate used for a real world application that will eventually have a team of developers.
 

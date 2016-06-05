@@ -43,11 +43,12 @@ export default class TaskList extends Component {
   render() {
     const style = {
       height: "100%",
-      minHeight: "150px",
-      width: "200px",
-      margin: "20px",
+      maxHeight: "500px",
+      padding: "10px",
+      width: "300px",
+      margin: "10px",
       textAlign: 'center',
-      display: 'block',
+      display: 'inline-block',
     };
 
     return (
@@ -60,4 +61,5 @@ export default class TaskList extends Component {
 
 TaskList.propTypes = {
   tasks: PropTypes.array.isRequired,
+  lists: PropTypes.array.isOptional,
 };

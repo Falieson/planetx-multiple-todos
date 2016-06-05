@@ -6,8 +6,9 @@
     <ul>
       <li>Simple Task Item</li>
       <li>Material Task Item<u>s</u></li>
-      <li><strong>Material Task List</strong></li>
-      <li>Task Lists page</li>
+      <li>Material Task List</li>
+      <li><strong>Task Lists page</strong></li>
+      <li>UI Tests</li>
     </ul>
 </ol>
 <ol start="3">
@@ -22,15 +23,11 @@
 
 
 # II. Current: (2) Task: Components
-##### C) Material Task List
-  1. Material:            Task List
-  1. Factory:             multiple items in list
-
 ##### D) Task Lists page
   1. Material:            Task Lists (pg)
   1. Factory:             multiple lists
 
-##### E) Task List Tests
+##### E) UI Tests: Task List component and page
   1. Test: Render=>       List Container
   1. Test: Render=>       creates multiple List Items
   1. Test: Render=>       multiple lists
@@ -97,6 +94,10 @@
 ##### B) Material Task Items
   1. Material:            Task Item
   1. Test: Render=>       "task completed" toggler
+
+##### C) Material Task List
+  1. Material:            Task List
+  1. Factory:             multiple items in list
 
 
 # V. Project Structure

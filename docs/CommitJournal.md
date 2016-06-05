@@ -1,12 +1,28 @@
 # 2. Task: Components #
+### 2.D) Task Lists Page
+commit: `{this}`
+
+Message: `2.D) Task Lists Page`
+
+Notes: `Pretty fast to make things with React`
+
+Files:
+*  `imports/api/factories/taskList.js`
+*  `imports/ui/App.jsx`
+*  `imports/ui/pages/Lists.jsx`
+*  `imports/ui/components/taskList/List.jsx`
+
 ### 2.C) Material Task List
 
 ##### 2.C.2) Tasks come from a single factory
-commit: `{this}`
+commit: `#c702516`
 
 Message: `2.C.2) Tasks come from a single factory`
 
-Notes: `Moved tests to the last step (2.E.1-3) b/c I'm still learning the react ecosystem and I'm fighting chai too much`
+Notes:
+```
+Moved tests to the last step (2.E.1-3) b/c I'm still learning the react ecosystem and I'm fighting chai too much
+```
 
 Files:
 *  `/client/main.less       # otherwise the Paper overflows-x window`
