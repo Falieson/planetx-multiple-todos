@@ -2,58 +2,35 @@
 <ol start="0">
   <li>Setup</li>
   <li>Hello World</li>
-  <li><u>Task: Components</u></li>
-    <ul>
-      <li>Simple Task Item</li>
-      <li>Material Task Item<u>s</u></li>
-      <li>Material Task List</li>
-      <li><strong>Task Lists page</strong></li>
-      <li>UI Tests</li>
-    </ul>
+  <li>Task: Components</li>
+  <li><u><strong>Task: Collections API</strong></u></li>
 </ol>
-<ol start="3">
-  <li>Task: Layouts & Header</li>
-  <li>Task: Collections API</li>
+<ol start="4">
   <li>Task: Forms and Events</li>
   <li>Task: Update and Remove</li>
   <li>Task: Temporary UI State</li>
+  <li>Task: Layouts & Header</li>
   <li>Router</li>
   <li>Accounts & Profile</li>
 </ol>
 
 
-# II. Current: (2) Task: Components
-##### D) Task Lists page
-  1. Material:            Task Lists (pg)
-  1. Factory:             multiple lists
-
-##### E) UI Tests: Task List component and page
-  1. Test: Render=>       List Container
-  1. Test: Render=>       creates multiple List Items
-  1. Test: Render=>       multiple lists
+# II. Current: (3) Task: Collections
+*  A) Setup/Thread API
+*  B) Task Lists
+*  C) Task Items
+*  D) Apollo to Mongo
 
 # III. Plan
-### 3. Task: Layouts & Header
-* Component
-  *  Header: Create Simple Header
 
-*  Layouts
-  *  Task Lists
-  *  Main Layout: Header and Content
+### 4. Task: Forms and Events
+### 5. Task: Update and Remove Tasks
+### 6. Task: Temporary UI State
 
-### 4. Task: Collections
-*  Apollo Server
-  *  Setup
-  *  Connect to Mongo
-
-*  APIs
-  *  Setup/Thread API
-  *  Task Lists
-  *  Task Items
-
-### 5. Task: Forms and Events
-### 6. Task: Update and Remove Tasks
-### 7. Task: Temporary UI State
+### 7. Task: Layouts & Header
+*  A) Layout:    Header and Content
+*  B) Layout:    Responsive (S, M, L)
+*  C) Component: Material Navbar
 
 ### 8. Router
 * Setup react-router
@@ -99,6 +76,14 @@
   1. Material:            Task List
   1. Factory:             multiple items in list
 
+##### D) Task Lists page
+  1. Material:            Task Lists (pg)
+  1. Factory:             multiple lists
+
+##### E) UI Tests: Task List component and page
+  1. Test: Render=>       List Container
+  1. Test: Render=>       creates multiple List Items
+  1. Test: Render=>       multiple lists
 
 # V. Project Structure
 1. Readme.md         - Summary of Application
@@ -114,7 +99,7 @@
 * UI
   * Loading State
   * Chromatica - UI State Testing
-  * Package Tasks, Accounts, & Profile
+  * Package: Tasks, Accounts, & Profile
   * Animations
 
 * Mobile
@@ -123,5 +108,5 @@
   * Mobile: Push Notifications
 
 * Data
-  * REST & SQL interfaces
   * ACID Task completion
+  * REST & SQL interfaces

@@ -1,3 +1,22 @@
+# 3. Task: Collections API
+
+### 3.A) Setup/Thread API
+commit: `{this}`
+
+Message: `3.A) Task: Collections - Setup API`
+
+Notes: `Putting this in one commit for learners`
+
+Files:
+*  `imports/api/api-server.js`
+*  `imports/api/api.js`
+*  `imports/startup/client/index.js`
+*  `imports/startup/server/index.js`
+
+References:
+* [Stackoverflow: Meteor 1.3 Collections Structure](http://stackoverflow.com/questions/37511561/meteor-1-3-app-structure-spltting-tasks-into-methods-subscriptions)
+
+
 # 2. Task: Components #
 ### 2.D) Task Lists Page
 commit: `{this}`
