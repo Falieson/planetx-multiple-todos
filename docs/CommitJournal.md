@@ -1,12 +1,42 @@
 # 2. Task: Components #
+### 2.C) Material Task List
+
+##### 2.C.2) Tasks come from a single factory
+commit: `{this}`
+
+Message: `2.C.2) Tasks come from a single factory`
+
+Notes: `Moved tests to the last step (2.E.1-3) b/c I'm still learning the react ecosystem and I'm fighting chai too much`
+
+Files:
+*  `/client/main.less       # otherwise the Paper overflows-x window`
+*  `/imports/ui/App.jsx`
+*  `/imports/api/factories/taskItem.js`
+*  `/imports/ui/components/taskItem/Item.jsx`
+*  `/imports/ui/components/taskList/List.jsx`
+
+##### 2.C.1) Material Task List
+commit: `#d26e134`
+
+Message: `2.C.1) Material Task List`
+
+Notes: `Moved task list into its own component`
+
+Files:
+*  `/imports/ui/App.jsx`
+*  `/imports/ui/components/taskList/List.jsx`
+
+References:
+* [Material-UI: Toggler](http://www.material-ui.com/#/components/toggle)
+
 ### 2.B) Material Task Items
 
 ##### 2.B.2) Test that Task Item is checkable
-commit: `{this}`
+commit: `#d26e134`
 
 Message: `** 2.B.2) Test that Task Item is checkable/completable`
 
-Notes: `incomplete commit: haven't figured out how to detect the material-ui checkbox is checked`
+Notes: `FIXME: **incomplete** Haven't figured out how to detect the material-ui checkbox is checked`
 
 Files:  `/imports/ui/components/taskItem/Item.test.jsx`
 

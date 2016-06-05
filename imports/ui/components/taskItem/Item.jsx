@@ -10,7 +10,7 @@ import Toggle from 'material-ui/Toggle';
 export default class TaskItem extends Component {
   renderToggler() {
     return (
-      <Toggle defaultToggled={this.props.task.isCompleted} />
+      <Toggle defaultToggled={this.props.task.checked} />
     );
   }
 

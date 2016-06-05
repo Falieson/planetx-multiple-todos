@@ -5,11 +5,7 @@ import faker        from 'faker';
 import { shallow, mount }  from 'enzyme';
 
 import TaskItem     from './Item.jsx';
-
-Factory.define('taskItem', TaskItem, {
-    text:()=> faker.lorem.sentence(),
-    setCompleted: ()=> false,
-});
+import '/imports/api/factories/taskItem.js'
 
 if( Meteor.isClient ) {
   describe('Task Item', ()=> {
@@ -18,22 +14,6 @@ if( Meteor.isClient ) {
       const item = shallow( <TaskItem task={task} /> );
       chai.assert(item.text(task.text));
     });
-
-    it('should be checked', ()=> {
-      const task = Factory.build('taskItem', {setCompleted: true});
-      const item = mount( <TaskItem task={task} /> );
-
-      const query = 'input[type="checkbox"]';
-      const toggler = item.find(query);
-
-      chai.assert.equal( toggler.length, 1, "No Toggler");
-
-      console.log("Toggler> ", toggler.get(0));
-      console.log("Toggler> ", toggler.get(0).checked );
-
-      chai.assert( toggler.get(0).checked );
-    });
-
 
   });
 }

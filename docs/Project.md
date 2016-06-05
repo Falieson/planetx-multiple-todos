@@ -5,8 +5,8 @@
   <li><u>Task: Components</u></li>
     <ul>
       <li>Simple Task Item</li>
-      <li><strong>Material Task Item<u>s</u></strong></li>
-      <li>Material Task List</li>
+      <li>Material Task Item<u>s</u></li>
+      <li><strong>Material Task List</strong></li>
       <li>Task Lists page</li>
     </ul>
 </ol>
@@ -22,41 +22,37 @@
 
 
 # II. Current: (2) Task: Components
-### B) Material Task Items
-  1. Material:            Task Item
-  1. Test: Render=>       "task completed" toggler
-
-
-# III. Plan
-### 2. Task: Components
 ##### C) Material Task List
   1. Material:            Task List
-  1. Test: Render=>       List Container
   1. Factory:             multiple items in list
-  1. Test: Render=>       List Items
 
 ##### D) Task Lists page
   1. Material:            Task Lists (pg)
   1. Factory:             multiple lists
+
+##### E) Task List Tests
+  1. Test: Render=>       List Container
+  1. Test: Render=>       creates multiple List Items
   1. Test: Render=>       multiple lists
 
+# III. Plan
 ### 3. Task: Layouts & Header
 * Component
-  * Header: Create Simple Header
+  *  Header: Create Simple Header
 
-* Layouts
-  * Task Lists
-  * Main Layout: Header and Content
+*  Layouts
+  *  Task Lists
+  *  Main Layout: Header and Content
 
 ### 4. Task: Collections
-* Apollo Server
-  * Setup
-  * Connect to Mongo
+*  Apollo Server
+  *  Setup
+  *  Connect to Mongo
 
-* APIs
-  * Setup/Thread API
-  * Task Lists
-  * Task Items
+*  APIs
+  *  Setup/Thread API
+  *  Task Lists
+  *  Task Items
 
 ### 5. Task: Forms and Events
 ### 6. Task: Update and Remove Tasks
@@ -97,6 +93,10 @@
   1. Simple Task Item
   1. Test: Render=>     single item
   1. Factory:           single item
+
+##### B) Material Task Items
+  1. Material:            Task Item
+  1. Test: Render=>       "task completed" toggler
 
 
 # V. Project Structure
