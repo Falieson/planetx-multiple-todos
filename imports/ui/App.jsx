@@ -7,18 +7,23 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 
 import TaskLists from './pages/Lists.jsx';
-import genTaskList from '/imports/api/factories/taskList.js'
+import { TaskListModels } from '/imports/api/taskLists/models.js';
+import { TaskListActions } from '/imports/api/taskLists/actions.js';
 
 // App component - represents the whole app
-export default class App extends Component {
-
-  getLists() {
-    const first = genTaskList();
-    const second = genTaskList();
-    return [first, second];
-  }
-
+class App extends Component {
   render() {
-    return ( <TaskLists lists={this.getLists()} /> );
+    TaskListActions().find.all.subscr();
+    return ( <TaskLists lists={this.props.lists} /> );
   }
 }
+
+App.propTypes = {
+  lists: PropTypes.array.isRequired,
+};
+
+export default createContainer(()=> {
+  return {
+    lists: TaskListModels().find.all.getdocs(),
+  };
+}, App );

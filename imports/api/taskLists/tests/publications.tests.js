@@ -1,0 +1,6 @@
+/*
+  Maybe there is a way to test a publication
+    that is different than testing the subscription
+    or the collections methods
+
+*/

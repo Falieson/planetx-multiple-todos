@@ -1,3 +1,6 @@
+# NOTE
+As of this commit - it's been a while since I've updated this structure file. At the end of this branch I'll make sure to do that to represent the boilerplates in each domain.
+
 Basic structure supplied by [Meteor 1.3 Guide - App Structure (Link, 20160601)](http://guide.meteor.com/structure.html)
 
 Final Structure based on collaboration with Stackoverflow and Gitter/meteor#meteor and many tutorials.

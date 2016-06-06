@@ -11,9 +11,6 @@ import Subheader from 'material-ui/Subheader';
 
 import TaskItem from '../taskItem/Item.jsx';
 
-import { Factory }  from 'meteor/dburles:factory';
-import '/imports/api/factories/taskItem.js'
-
 // Task List component - Lists out all the tasks
 export default class TaskList extends Component {
   constructor(props) {

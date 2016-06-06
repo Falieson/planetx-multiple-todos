@@ -1,9 +1,31 @@
 <h1><strong>Current Branch: '3/task_collections'</strong></h1>
 
-# About
-This application can be used as a boilerplate for starting a large scale meteor application. The major libraries are: React, Apollo, & Material. The imports directory contains a basic Todos application which can be used as example / sample code for your app. Other tutorials typically focus on a SPA application, but this is designed to be a Multipage boilerplate used for a real world application that will eventually have a team of developers.
+<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:0 orderedList:0 -->
 
-Meteor is chosen as the NodeJS framework because it is designed to reduce development time.
+- [About](#about)
+  - [Caveats](#caveats)
+  - [Differences from Meteor's React Todo Tutorial](#differences-from-meteors-react-todo-tutorial)
+  - [Customizations](#customizations)
+  - [Too Advanced? Start here...](#too-advanced-start-with)
+  - [Later Versions](#later-versions)
+- [Install](#install)
+  - [Meteor Framework](#meteor-framework)
+  - [App Node Dependencies](#app-node-dependencies)
+- [Run & Dev-Build App](#run-dev-build-app)
+- [Dev & Tutorials](#dev-tutorials)
+  - [Project Structure](#project-structure)
+  - [Tutorials and Learning](#tutorials-and-learning)
+  - [Test App](#test-app)
+- [About Meteor](#about-meteor)
+  - [App Structure](#app-structure)
+- [Author](#author)
+
+<!-- /TOC -->
+
+# About
+This meteor app can be used as a boilerplate for starting a large scale production application. The major libraries are: React, Apollo, & Material. The imports directory contains a basic Todos application which can be used as example / sample code for your app. Other tutorials typically focus on a SPA application, but this is designed to be a Multipage boilerplate used for a real world application that will eventually have a team of developers.
+
+Meteor is chosen as the NodeJS build framework because it is designed to reduce development time.
 
 I have structured the app for a verbose file structure. A collaborative development environment, can cause many file changes in a day. My theory is that dissolving functionality as much as possible will reduce merge conflicts.
 
@@ -41,18 +63,18 @@ If you are making changes to the code (using this as a boilerplate for your proj
 $ ln -s .meteor/packages meteor_packages
 ```
 
-### Too Advanced? Start With:
-* Meteor's:  [Simple-React-Todos#a917718](https://github.com/meteor/simple-todos-react/tree/a91771830ad7e40b61bc93988e9c954e75d7a590)
-* Apollostack's:  [Discourse-Demo#5d045ff](https://github.com/apollostack/apollo-demo/tree/5d045ff807a08a754628ad9edf8e17526d6ceac0)
-* More references in `/docs/References.md`
+### Too Advanced? Start here...
+*  [Meteor's Simple-React-Todos#a917718](https://github.com/meteor/simple-todos-react/tree/a91771830ad7e40b61bc93988e9c954e75d7a590)
+*  [Abhi Ayer's How We Redux (and all their links)](https://medium.com/modern-user-interfaces/how-we-redux-part-1-introduction-18a24c3b7efe#.jylok6ems) - Viewed 20160601, Authored 20160110
+*  More references in `/docs/References.md`
 
-### Later Versions (time and interest willing)
-For more, look at `docs/Proejct.md` and search for `Gold Plating`
+### Later Versions
+For more, look at `/docs/Project.md` and search for `Gold Plating`
 
- * create History page and dependencies
- * create AdvancedList page and dependencies
- * convert Lists & Tasks into Tasks package
- * convert Accounts & Profiles into Accounts package
+*  create History page and dependencies
+*  create AdvancedList page and dependencies
+*  convert Lists & Tasks into Tasks package
+*  convert Accounts & Profiles into Accounts package
 
 # Install
 ### Meteor Framework
@@ -76,17 +98,21 @@ Run the command, then Open your browser to localhost:3000
 $ meteor
 ```
 
-# Development
+# Dev & Tutorials
 ### Project Structure
-Look at the /docs/  folder
+Start with the `/docs/` folder
 
 1. Project.md       - Project Current Stage, Plan, History
+1. CommitJournal.md - Message and Notes
+1. Structure.md     - Sketch of final app structure
 1. References.md    - Tutorials and Repos
 1. Environment.md   - Some Regex and Mods from my Env
-1. Structure.md     - Sketch of final app structure
-1. CommitJournal.md - Message and Notes
 
-### Contributing
+### Tutorials and Learning
+Start with these two files, they are updated every commit
+
+1. `/docs/Project.md`
+1. `/docs/CommitJournal.md`
 
 
 ### Test App

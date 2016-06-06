@@ -15,11 +15,16 @@
 </ol>
 
 
-# II. Current: (3) Task: Collections
-*  A) Setup/Thread API
-*  B) Task Lists
-*  C) Task Items
-*  D) Apollo to Mongo
+# II. Current: (3) Task: Collections API
+*  A)  Setup API
+  * A.1)  Simple Structure
+  * A.2)  Task Items & Lists Structure
+
+*  B)  Task Items & Lists - API & Fixtures
+  * B.1)  Fixtures: Task Items & Lists
+  * B.2)  API: Task Items & Lists
+
+*  C)  Apollo to Mongo
 
 # III. Plan
 
@@ -110,3 +115,6 @@
 * Data
   * ACID Task completion
   * REST & SQL interfaces
+
+* Production
+  * Deploy to Ubuntu

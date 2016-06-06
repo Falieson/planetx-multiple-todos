@@ -1,9 +1,54 @@
 # 3. Task: Collections API
-
-### 3.A) Setup/Thread API
+### 3.A) Setup API
+### 3.A.2) Task Items & Lists
 commit: `{this}`
 
-Message: `3.A) Task: Collections - Setup API`
+branch: `3/task_collections`
+
+Message: `3.A.2) Setup API: Task Items & Lists`
+
+Notes:
+*  Basic structure before making fixtures and making the api methods
+*  Generate a new item with `$ cd /imports/api/ && cp -rf .boilerplate taskItems`
+*  Lots of changes to structure, will be doc'd at end of branch
+
+Files:
+*  `imports/ui/App.jsx`
+*  `imports/ui/components/`<u>taskItem/Item.test.js</u>
+*  `imports/ui/components/`<u>taskList/List.jsx</u>
+*  `imports/api/.boilerplate/`
+    *  `Readme.md`
+    *  `actions.js`
+    *  `collections.js`
+    *  `factories.js`
+    *  `methods-pubsub.js`
+    *  `methods.js`
+    *  `models.js`
+    *  `subscriptions.js`
+    *  `docs/*`
+    *  `server/`
+      *  `fixtures.js`
+      *  `publications.js`
+    *  `tests/`
+      *  `index.tests.js`
+      *  `actions.tests.js`
+      *  `models.tests.js`
+      *  `publications.tests.js`
+      *  `subscriptions.tests.js`
+*  `imports/startup/server/`
+    *  `index.js`
+    *  `fixtures.js`
+
+References:
+* [Meteor's React Collections: Storing Tasks](https://www.meteor.com/tutorials/react/collections)
+* [Falieson's Learning React: multi-branch sketches](https://github.com/Falieson/LearningReact)
+
+### 3.A.1) Task Items & Lists
+commit: `#5530d5c`
+
+branch: `3/task_collections`
+
+Message: `3.A.1) Setup API: Simple Structure`
 
 Notes: `Putting this in one commit for learners`
 
@@ -84,8 +129,8 @@ commit: `#2bbdc55`
 Message: `2.B.1) Material Task Item`
 
 Notes:
-* `Materialized the Task Item`
-* `Updated Project.md and this CJ to better represent this branches workflow`
+*  `Materialized the Task Item`
+*  `Updated Project.md and this CJ to better represent this branches workflow`
 
 Files:  `/imports/ui/components/taskItem/Item.jsx`
 
@@ -127,8 +172,8 @@ Message: `2.A.1) Simple List of Tasks`
 Notes: `Pretty much straight from the React tutorial`
 
 Files:
-* `/imports/ui/App.jsx`
-* `/imports/ui/components/taskItem/Item.jsx`
+*  `/imports/ui/App.jsx`
+*  `/imports/ui/components/taskItem/Item.jsx`
 
 References:
 * Meteor's React [Tutorial: Testing](https://www.meteor.com/tutorials/react/testing)
@@ -143,9 +188,9 @@ Message: `1. Material Hello World`
 Notes: `Put some paper on the page and each letter in a circle`
 
 Files:
-* `/imports/ui/App.jsx`
-* `/imports/ui/pages/Hello.jsx`
-* `/imports/ui/components/HelloMessage.jsx`
+*  `/imports/ui/App.jsx`
+*  `/imports/ui/pages/Hello.jsx`
+*  `/imports/ui/components/HelloMessage.jsx`
 
 
 ### 1.A) Simple Hello

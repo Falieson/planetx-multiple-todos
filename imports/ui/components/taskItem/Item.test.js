@@ -5,7 +5,7 @@ import faker        from 'faker';
 import { shallow, mount }  from 'enzyme';
 
 import TaskItem     from './Item.jsx';
-import '/imports/api/factories/taskItem.js'
+import '/imports/api/taskItems/factories.js'
 
 if( Meteor.isClient ) {
   describe('Task Item', ()=> {
