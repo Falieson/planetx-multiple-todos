@@ -18,11 +18,11 @@ export default class TaskLists extends Component {
   }
 
   renderTaskList() {
-    return this.props.lists.map( (tasks)=> {
-      const currKey = !tasks._id? Random.id() : tasks._id;
+    return this.props.lists.map( (list)=> {
+      const currKey = !list._id? Random.id() : list._id;
       return (
-        <TaskList key={currKey} tasks={tasks} lists={this.props.lists}/>
-        // NOTE: I have to add this lists={} property to make an error go away?
+        // NOTE: I have to add this lists={} property to make an error go away
+        <TaskList key={currKey} tasks={list.tasks} lists={this.props.lists}/>
       );
 
     } );

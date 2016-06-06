@@ -1,7 +1,23 @@
 # 3. Task: Collections API
 ### 3.B) Task Items & Lists
-### 3.B.2) Task Collection Fixtures
+##### 3.B.3) Render DB items
 commit: `{this}`
+
+branch: `3/task_collections`
+
+Message: `3.B.3) Render: Collection Tasks and Lists`
+
+Notes: `Insecure & Autopublish are enabled to illustrate the work in the last commit for publish and subscribe`
+
+Files:
+*  `imports/ui/pages/Lists.jsx`
+*  `imports/ui/components/taskList/List.jsx`
+*  `imports/api/taskLists/models.js`
+*  `imports/api/taskLists/server/fixtures.js`
+
+
+##### 3.B.2) Task Collection Fixtures
+commit: `#a32b875`
 
 branch: `3/task_collections`
 
@@ -13,8 +29,7 @@ Files:
 *  `imports/api/taskItems/server/fixtures.js`
 *  `imports/api/taskLists/server/fixtures.js`
 
-
-### 3.B.1) Task Collection Fixtures
+##### 3.B.1) Task Collection Fixtures
 commit: `#484582a`
 
 branch: `3/task_collections`
@@ -38,7 +53,7 @@ References:
 * [Loading data with Methods](http://guide.meteor.com/methods.html#loading-data)
 
 ### 3.A) Setup API
-### 3.A.2) Task Items & Lists
+##### 3.A.2) Task Items & Lists
 commit: `#4f42c73`
 
 branch: `3/task_collections`
@@ -81,7 +96,7 @@ References:
 * [Meteor's React Collections: Storing Tasks](https://www.meteor.com/tutorials/react/collections)
 * [Falieson's Learning React: multi-branch sketches](https://github.com/Falieson/LearningReact)
 
-### 3.A.1) Simple Structure
+##### 3.A.1) Simple Structure
 commit: `#5530d5c`
 
 branch: `3/task_collections`

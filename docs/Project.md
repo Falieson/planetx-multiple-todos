@@ -21,8 +21,9 @@
   * A.2)  Task Items & Lists Structure
 *  B)  <strong>Task Items & Lists - API & Fixtures</strong>
   * B.1)  <strong>Fixtures: Simple Fixture Example</strong>
-  * B.1)  <strong>Fixtures: Task Items & Lists</strong>
-  * B.2)  <strong>API: Task Items & Lists</strong>
+  * B.2)  <strong>Fixtures: Task Items & Lists</strong>
+  * B.3)  <strong>Render: Collection Docs/Items</strong>
+  * B.4)  <strong>Data: Publish & Subscribe</strong>
 *  C)  Apollo to Mongo
 
 # III. Plan

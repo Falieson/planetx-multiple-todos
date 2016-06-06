@@ -3,7 +3,7 @@ import { Mongo } from 'meteor/mongo';
 
 import { Lists } from '../collections.js';
 
-import '../factories.js';
+import '/imports/api/taskItems/factories.js';
 
 if( Meteor.isServer ){
   const firstLoad = Lists.find({_id: "init"}).count() === 0;

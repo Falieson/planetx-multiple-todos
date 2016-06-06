@@ -31,3 +31,5 @@ dburles:factory
 hwillson:stub-collections
 tmeasday:publish-counts
 random
+insecure
+autopublish
