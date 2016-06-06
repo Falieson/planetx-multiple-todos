@@ -20,16 +20,16 @@ export default class TaskList extends Component {
   }
   getTasks() {
     return this.props.tasks? Array.isArray(this.props.tasks) ? this.props.tasks : [this.props.tasks] : [];
-    console.log("Lists> ", this.props.list );
-    console.log("Tasks> ", this.props.tasks );
+    // console.log("Lists> ", this.props.list );
+    // console.log("Tasks> ", this.props.tasks );
     // return [{text: "Dddd"}]
   }
 
   renderTaskList() {
-    const target = this.getTasks();
-    console.log("Targ> ", target);
+    const tasks = this.getTasks();
+    // console.log("tasks> ", tasks);
 
-    return target.map( (task) => (<TaskItem key={task._id} task={task} />) );
+    return tasks.map( (task) => (<TaskItem key={task._id} task={task} />) );
   }
 
   renderList() {
@@ -50,6 +50,7 @@ export default class TaskList extends Component {
       margin: "10px",
       textAlign: 'center',
       display: 'inline-block',
+      verticalAlign: 'top',
     };
 
     return (

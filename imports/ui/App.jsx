@@ -7,13 +7,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 
 import TaskLists from './pages/Lists.jsx';
-import { TaskListModels } from '/imports/api/taskLists/models.js';
+import { TaskListViews } from '/imports/api/taskLists/views.js';
 import { TaskListActions } from '/imports/api/taskLists/actions.js';
 
 // App component - represents the whole app
 class App extends Component {
   render() {
-    TaskListActions().find.all.subscr();
+    TaskListActions().find.all;
     return ( <TaskLists lists={this.props.lists} /> );
   }
 }
@@ -24,6 +24,6 @@ App.propTypes = {
 
 export default createContainer(()=> {
   return {
-    lists: TaskListModels().find.all.getdocs(),
+    lists: TaskListViews().find.all.fetch(),
   };
 }, App );

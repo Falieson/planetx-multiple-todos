@@ -11,14 +11,26 @@ import { check } from 'meteor/check';
 
 import { Lists } from './collections.js';
 
-export const TaskListModels = ()=> {
-  // const getdocs =()=> Lists.find({}).fetch();
-  const getdocs =()=> {
-    const cursor =  Lists.find({_id: {$ne: "init"}});
-    return cursor.fetch();
+export const TaskListViews = ()=> {
+  const queries = {
+    all: {
+      _id: {$ne: "init"},
+      $or: [
+        { private: { $ne: true } },
+        { owner: this.userId },
+      ],
+    },
+
+
   };
 
-  const all = {getdocs}
+  // const getdocs =()=> Lists.find({}).fetch();
+  const getdocs =(query)=> {
+    const cursor =  Lists.find(query);
+    return cursor;
+  };
+
+  const all = getdocs(queries.all);
   const find = {all}
 
   return {find};

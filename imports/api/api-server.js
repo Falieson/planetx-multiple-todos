@@ -4,4 +4,5 @@
 // Server only API code
 
 import '/imports/api/api.js';
-// import '/imports/api/apiName/server/publications.js';
+import '/imports/api/taskItems/server/publications.js';
+import '/imports/api/taskLists/server/publications.js';

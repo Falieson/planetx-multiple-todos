@@ -1,7 +1,38 @@
 # 3. Task: Collections API
+### 3.C) Task Items & Lists
+##### 3.C.1) Subscribe to Data on the Client
+commit: `{this}`
+
+branch: `3/task_collections`
+
+Message: `3.C.1) Task Data: Simple Publish and Subscribe`
+
+Notes:
+* `Advanced Meteor methods doing validation, schemas, and factories`
+* `Data renders with pub/sub and pckgs: "insecure" and "autopublish are removed"`
+
+Fixes: `In (3.A.2) Views were incorrectly called Models`
+
+Files:
+* `mod: imports/ui/App.jsx`
+* `mod: imports/ui/pages/Lists.jsx`
+* `mod: imports/ui/components/taskList/List.jsx`
+* `mod: imports/api/api.js`
+* `mod: imports/api/api-server.js`
+* `mod: imports/api/taskItems/methods.js`
+* `mv : imports/api/taskItems/models.js -> ./views.js`
+* `mod: imports/api/taskLists/actions.js`
+* `mod: imports/api/taskLists/methods.js`
+* `mv : imports/api/taskLists/models.js -> ./views.js`
+* `mod: imports/api/taskLists/server/fixtures.js`
+* `mod: imports/api/taskLists/server/publications.js`
+
+References:
+* [Advanced Method boilerplate](http://guide.meteor.com/methods.html#advanced-boilerplate)
+
 ### 3.B) Task Items & Lists
 ##### 3.B.3) Render DB items
-commit: `{this}`
+commit: `#65c9773`
 
 branch: `3/task_collections`
 
@@ -23,11 +54,12 @@ branch: `3/task_collections`
 
 Message: `3.B.2) Fixtures: Task Items & Lists`
 
-Notes: `** revisit to add fixture tests`
+Notes: `**revisit to add fixture tests`
 
 Files:
 *  `imports/api/taskItems/server/fixtures.js`
 *  `imports/api/taskLists/server/fixtures.js`
+
 
 ##### 3.B.1) Task Collection Fixtures
 commit: `#484582a`
@@ -169,7 +201,7 @@ commit: `#d26e134`
 
 Message: `** 2.B.2) Test that Task Item is checkable/completable`
 
-Notes: `FIXME: **incomplete** Haven't figured out how to detect the material-ui checkbox is checked`
+FIXME: `**incomplete Haven't figured out how to detect the material-ui checkbox is checked`
 
 Files:  `/imports/ui/components/taskItem/Item.test.jsx`
 

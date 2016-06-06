@@ -3,7 +3,7 @@ import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
 import { Tasks } from '../collections.js';
-import { TaskModels } from '../models.js';
+// import { TaskViews } from './views.js';
 
 // export const TaskPubs = {};
 // if (Meteor.isServer) {

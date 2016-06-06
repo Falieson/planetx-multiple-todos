@@ -19,15 +19,18 @@
 *  A)  Setup API
   * A.1)  Simple Structure
   * A.2)  Task Items & Lists Structure
-*  B)  <strong>Task Items & Lists - API & Fixtures</strong>
-  * B.1)  <strong>Fixtures: Simple Fixture Example</strong>
-  * B.2)  <strong>Fixtures: Task Items & Lists</strong>
-  * B.3)  <strong>Render: Collection Docs/Items</strong>
-  * B.4)  <strong>Data: Publish & Subscribe</strong>
+*  B)  Task Items & Lists - API & Fixtures
+  * B.1)  Fixtures: Simple Fixture Example
+  * B.2)  Fixtures: Task Items & Lists
+  * B.3)  Render: Collection Docs/Items
+*  C)  <strong>Data: Publish & Subscribe</strong>
+  * C.1)  <strong>Data: Simple Publish and Subscribe</strong>
+  * C.2)  <strong>Data: Joined Collections</strong>
 *  C)  Apollo to Mongo
+*  D)  Test Coverage for API
+
 
 # III. Plan
-
 ### 4. Task: Forms and Events
 ### 5. Task: Update and Remove Tasks
 ### 6. Task: Temporary UI State

@@ -14,13 +14,13 @@ import { Lists } from './collections.js';
 const clientCheck = ()=> Meteor.isClient;
 
 export const TaskListActions = ()=> {
-  const subscr =()=> {
+  const subscribe =()=> {
     if(clientCheck){
       Meteor.subscribe('tasks');
     }
   };
 
-  const all = {subscr}
+  const all = subscribe();
   const find = {all}
 
   return {find};

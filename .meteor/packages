@@ -3,15 +3,30 @@
 #
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
+#
+# METEOR COMMON (REMOVED)
+#tracker                # Meteor's client-side reactive programming library
+#reactive-var           # Reactive variable for tracker
+#jquery                 # Helpful client-side library
 
 # Framework
 meteor-base             # Packages every Meteor app needs to have
 mobile-experience       # Packages for a great mobile UX
-mongo                   # The database Meteor supports right now
-#tracker                # Meteor's client-side reactive programming library
-#reactive-var           # Reactive variable for tracker
 react-meteor-data       # Recommended meteor data library
-jquery                  # Helpful client-side library
+
+# DB
+mongo                   # The database Meteor supports right now
+aldeed:simple-schema
+tmeasday:publish-counts
+ddp-rate-limiter
+
+# Testing Libraries
+practicalmeteor:mocha
+xolvio:cleaner
+dburles:factory
+hwillson:stub-collections
+mdg:validated-method
+mdg:validation-error
 
 # Build
 standard-minifier-css   # CSS minifier run for production mode
@@ -24,12 +39,5 @@ less
 # Accounts Libraries
 accounts-password
 
-# Testing Libraries
-practicalmeteor:mocha
-xolvio:cleaner
-dburles:factory
-hwillson:stub-collections
-tmeasday:publish-counts
+# Unsorted
 random
-insecure
-autopublish
