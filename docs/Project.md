@@ -19,11 +19,10 @@
 *  A)  Setup API
   * A.1)  Simple Structure
   * A.2)  Task Items & Lists Structure
-
-*  B)  Task Items & Lists - API & Fixtures
-  * B.1)  Fixtures: Task Items & Lists
-  * B.2)  API: Task Items & Lists
-
+*  B)  <strong>Task Items & Lists - API & Fixtures</strong>
+  * B.1)  <strong>Fixtures: Simple Fixture Example</strong>
+  * B.1)  <strong>Fixtures: Task Items & Lists</strong>
+  * B.2)  <strong>API: Task Items & Lists</strong>
 *  C)  Apollo to Mongo
 
 # III. Plan
@@ -114,7 +113,10 @@
 
 * Data
   * ACID Task completion
-  * REST & SQL interfaces
+  * [REST](http://guide.meteor.com/data-loading.html#rest-interop) & SQL interfaces
+  * [Schemas](http://guide.meteor.com/collections.html#schemas)
+  * [Migrations](http://guide.meteor.com/collections.html#migrations)
 
 * Production
   * Deploy to Ubuntu
+  * [Error Handling](http://guide.meteor.com/methods.html#errors)

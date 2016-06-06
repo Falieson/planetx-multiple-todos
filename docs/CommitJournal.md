@@ -1,7 +1,32 @@
 # 3. Task: Collections API
+### 3.B) Task Items & Lists
+### 3.B.1) Task Collection Fixtures
+commit: `{this}`
+
+branch: `3/task_collections`
+
+Message: `3.B.1) Simple Fixture for Learners`
+
+Notes:
+*  inspect with meteor mongo:
+  *  `db.taskItems.find().count()`
+  *  `db.taskLists.find().count()`
+*  fixtures test is possible with stubs
+
+Files:
+*  `server/main.js`
+*  `imports/startup/server/fixtures.js`
+*  `imports/api/taskItems/factories.js`
+*  `imports/api/taskItems/server/fixtures.js`
+
+References:
+* [Mocking the database]( http://guide.meteor.com/testing.html#mocking-the-database)
+* [Loading data with Methods](http://guide.meteor.com/methods.html#loading-data)
+
+# 3. Task: Collections API
 ### 3.A) Setup API
 ### 3.A.2) Task Items & Lists
-commit: `{this}`
+commit: `#4f42c73`
 
 branch: `3/task_collections`
 

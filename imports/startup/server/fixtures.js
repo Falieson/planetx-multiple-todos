@@ -2,8 +2,8 @@
 // CALLEDBY /imports/startup/server/index.js
 // [Startup Files](http://guide.meteor.com/structure.html#startup-files)
 
-//TODO: import '/imports/api/taskItems/server/fixtures.js';
-//TODO: import '/imports/api/taskLists/server/fixtures.js';
+import '/imports/api/taskItems/server/fixtures.js';
+import '/imports/api/taskLists/server/fixtures.js';
 
 // Moved below to the taskLists api
 // import genTaskList from '/imports/api/factories/taskList.js';

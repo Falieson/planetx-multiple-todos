@@ -11,6 +11,6 @@ import { check } from 'meteor/check';
 
 import { Tasks } from './collections.js';
 
-export const TaskModels = ()=> {
+export const TaskModels = {
   'find.all': true,
 };
