@@ -12,26 +12,42 @@ import { check } from 'meteor/check';
 import { Lists } from './collections.js';
 
 export const TaskListViews = ()=> {
-  const queries = {
-    all: {
-      _id: {$ne: "init"},
-      $or: [
-        { private: { $ne: true } },
-        { owner: this.userId },
-      ],
-    },
+  const getdocs = (type, options)=> {
+    let query;
+    if(type =="all"){
+      query = {
+        _id: {$ne: "init"},
+        $or: [
+          { private: { $ne: true } },
+          { owner: this.userId },
+        ],
+      };
+    } else if(type == "one") {
+      query = {
+        options,
+        $or: [
+          { private: { $ne: true } },
+          { owner: this.userId },
+        ],
+      };
+    }
 
-
+    return Lists.find(query);
+  };
+  const all = ()=> {
+    if(Meteor.isClient){
+      return getdocs("all").fetch();
+    } else {
+      return getdocs("all");
+    }
+  };
+  const one = (target) => {
+    if(Meteor.isClient){
+      return Lists.findOne(target);
+    } else {
+      return getdocs("one", target);
+    }
   };
 
-  // const getdocs =()=> Lists.find({}).fetch();
-  const getdocs =(query)=> {
-    const cursor =  Lists.find(query);
-    return cursor;
-  };
-
-  const all = getdocs(queries.all);
-  const find = {all}
-
-  return {find};
+  return {find: {all, one}};
 };

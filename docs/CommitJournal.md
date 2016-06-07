@@ -1,7 +1,41 @@
 # 3. Task: Collections API
 ### 3.C) Task Items & Lists
-##### 3.C.1) Subscribe to Data on the Client
+##### 3.C.2) Use Views and Actions to deliver Data
 commit: `{this}`
+
+branch: `3/task_collections`
+
+Message: `3.C.2) Data: Views and Actions`
+
+Notes:
+*  `Use Views and Actions rather than methods directly, creates reusability for pub/sub`
+*  `Created task items in separate collection but not directly referencing them yet`
+* ** Tip: **
+Rather than doing `meteor reset && meteor` to reset the collection, do the below commands and add a space or enter (empty char) to any file, and hit save to trigger meteor's webserver rebuild.
+```
+$ meteor mongo
+> db.taskLists.remove({}) // dumps the collection
+```
+
+Files:
+*  `.meteor/packages`
+*  `imports/ui/App.jsx`
+*  `imports/ui/components/taskList/List.jsx`
+*  `imports/ui/pages/Lists.jsx`
+*  `imports/api/taskItems/collections.js`
+*  `imports/api/taskItems/factories.js`
+*  `imports/api/taskItems/methods.js`
+*  `imports/api/taskItems/views.js`
+*  `imports/api/taskLists/collections.js`
+*  `imports/api/taskLists/factories.js`
+*  `imports/api/taskLists/methods.js`
+*  `imports/api/taskLists/server/fixtures.js`
+*  `imports/api/taskLists/server/publications.js`
+*  `imports/api/taskLists/views.js`
+
+
+##### 3.C.1) Subscribe to Data on the Client
+commit: `#2c49c82`
 
 branch: `3/task_collections`
 

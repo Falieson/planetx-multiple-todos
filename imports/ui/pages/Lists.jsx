@@ -22,7 +22,7 @@ export default class TaskLists extends Component {
       const currKey = !list._id? Random.id() : list._id;
       return (
         // NOTE: I have to add this lists={} property to make an error go away
-        <TaskList key={currKey} tasks={list.tasks} lists={this.props.lists}/>
+        <TaskList key={currKey} title={list.title} listId={list._id} tasks={list.tasks} lists={this.props.lists}/>
       );
 
     } );

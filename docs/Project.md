@@ -25,9 +25,10 @@
   * B.3)  Render: Collection Docs/Items
 *  C)  <strong>Data: Publish & Subscribe</strong>
   * C.1)  <strong>Data: Simple Publish and Subscribe</strong>
-  * C.2)  <strong>Data: Joined Collections</strong>
-*  C)  Apollo to Mongo
-*  D)  Test Coverage for API
+  * C.2)  <strong>Data: Views and Actions</strong>
+  * C.3)  <strong>Data: Joined Collections</strong>
+*  D) Test Coverage for API
+*  E) Apollo interface for Mongo
 
 
 # III. Plan
@@ -57,6 +58,7 @@
 * Router
   * Render Auth Page
   * Render Profile Page
+
 
 # IV. History
 ### 0. Setup
@@ -107,7 +109,6 @@
 * UI
   * Loading State
   * Chromatica - UI State Testing
-  * Package: Tasks, Accounts, & Profile
   * Animations
 
 * Mobile
@@ -121,6 +122,22 @@
   * [Schemas](http://guide.meteor.com/collections.html#schemas)
   * [Migrations](http://guide.meteor.com/collections.html#migrations)
 
+* Scaling
+  * Package by Domain (Tasks, Accounts, & Profile)
+  * Split into Multiple Apps
+
 * Production
   * Deploy to Ubuntu
   * [Error Handling](http://guide.meteor.com/methods.html#errors)
+  * [Multi-Core](https://meteorhacks.com/introducing-multi-core-support-for-meteor/)
+* Features
+  * Task History
+  * Task Stats
+    * Components: "Set Started" and Results
+      * Field: Task (started) thought of at ??
+      * Setting: Avg. default from Created to Started
+    * Page: Results
+      * Totals
+      * Averages
+        * Time from Task Started to Created
+        * Completion Time (this.sinceStarted(),    this.sinceCreated())

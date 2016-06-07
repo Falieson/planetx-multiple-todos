@@ -9,7 +9,13 @@ import Paper from 'material-ui/Paper';
 import {List} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 
+import { TaskListViews } from '/imports/api/taskLists/views.js';
+// import { TaskListActions } from '/imports/api/taskLists/actions.js';
+// TaskListActions().find.all;
+import { Lists } from '/imports/api/taskLists/collections.js';
+
 import TaskItem from '../taskItem/Item.jsx';
+
 
 // Task List component - Lists out all the tasks
 export default class TaskList extends Component {
@@ -19,15 +25,14 @@ export default class TaskList extends Component {
     this.tasks = [];
   }
   getTasks() {
-    return this.props.tasks? Array.isArray(this.props.tasks) ? this.props.tasks : [this.props.tasks] : [];
-    // console.log("Lists> ", this.props.list );
-    // console.log("Tasks> ", this.props.tasks );
-    // return [{text: "Dddd"}]
+    const list = TaskListViews().find.one({_id: this.props.listId});
+
+    const tasks = list.tasks? Array.isArray(list.tasks) ? list.tasks : [list.tasks] : [];
+    return tasks;
   }
 
   renderTaskList() {
     const tasks = this.getTasks();
-    // console.log("tasks> ", tasks);
 
     return tasks.map( (task) => (<TaskItem key={task._id} task={task} />) );
   }
@@ -35,7 +40,7 @@ export default class TaskList extends Component {
   renderList() {
     return (
       <List>
-        <Subheader>Tasks</Subheader>
+        <Subheader>{this.props.title}</Subheader>
         {this.renderTaskList()}
       </List>
     );
@@ -54,7 +59,7 @@ export default class TaskList extends Component {
     };
 
     return (
-       <MuiThemeProvider muiTheme={getMuiTheme()} className="container">
+      <MuiThemeProvider muiTheme={getMuiTheme()} className="container">
          <Paper style={style} zDepth={2} rounded={false} children={this.renderList()}/>
       </MuiThemeProvider>
     );
@@ -62,7 +67,7 @@ export default class TaskList extends Component {
 }
 
 TaskList.propTypes = {
+  title: PropTypes.string.isRequired,
+  listId: PropTypes.string.isRequired,
   tasks: PropTypes.array.isRequired,
-  list:  PropTypes.object.isOptional,
-  lists: PropTypes.array.isOptional
 };

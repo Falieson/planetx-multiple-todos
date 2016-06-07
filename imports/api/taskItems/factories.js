@@ -1,9 +1,12 @@
 import { Factory }  from 'meteor/dburles:factory';
 import faker        from 'faker';
-import TaskItem     from '/imports/ui/components/taskItem/Item.jsx';
+import { Random }   from 'meteor/random'
 
-export default Factory.define('taskItem', 'taskItems', {
-  text:()=> faker.lorem.sentence(),
-  checked: ()=> false,
+import Tasks        from './collections.js'
+
+export default Factory.define('taskItem', Tasks, {
   createdAt: new Date(),
+  listId:()=> Random.id(),
+  text:()=> faker.commerce.productName(),
+  checked: ()=> false,
 });

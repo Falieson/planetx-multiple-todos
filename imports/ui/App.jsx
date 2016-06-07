@@ -24,6 +24,6 @@ App.propTypes = {
 
 export default createContainer(()=> {
   return {
-    lists: TaskListViews().find.all.fetch(),
+    lists: TaskListViews().find.all(),
   };
 }, App );

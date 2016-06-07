@@ -4,13 +4,3 @@
   *  server/publications.js
   *  *.tests.js
 */
-
-import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
-import { check } from 'meteor/check';
-
-import { Tasks } from './collections.js';
-
-export const TaskViews = {
-  'find.all': true,
-};
