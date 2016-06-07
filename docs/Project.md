@@ -26,7 +26,7 @@
 *  C)  <strong>Data: Publish & Subscribe</strong>
   * C.1)  <strong>Data: Simple Publish and Subscribe</strong>
   * C.2)  <strong>Data: Views and Actions</strong>
-  * C.3)  <strong>Data: Joined Collections</strong>
+  * C.3)  <strong>Data: Multiple Collections</strong>
 *  D) Test Coverage for API
 *  E) Apollo interface for Mongo
 

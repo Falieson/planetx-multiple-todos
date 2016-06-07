@@ -10,31 +10,24 @@ import {List} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 
 import { TaskListViews } from '/imports/api/taskLists/views.js';
-// import { TaskListActions } from '/imports/api/taskLists/actions.js';
-// TaskListActions().find.all;
 import { Lists } from '/imports/api/taskLists/collections.js';
 
 import TaskItem from '../taskItem/Item.jsx';
+import { TaskItemSubs } from '/imports/api/taskItems/subscriptions.js';
 
 
 // Task List component - Lists out all the tasks
 export default class TaskList extends Component {
   constructor(props) {
     super(props);
-
     this.tasks = [];
   }
   getTasks() {
-    const list = TaskListViews().find.one({_id: this.props.listId});
-
-    const tasks = list.tasks? Array.isArray(list.tasks) ? list.tasks : [list.tasks] : [];
-    return tasks;
+    return TaskListViews.find.tasksFor(this.props.listId);
   }
 
   renderTaskList() {
-    const tasks = this.getTasks();
-
-    return tasks.map( (task) => (<TaskItem key={task._id} task={task} />) );
+    return this.getTasks().map( (task) => (<TaskItem key={task._id} task={task} />) );
   }
 
   renderList() {
@@ -47,6 +40,8 @@ export default class TaskList extends Component {
   }
 
   render() {
+    TaskItemSubs.find.select(this.props.listId);
+
     const style = {
       height: "100%",
       maxHeight: "500px",
@@ -69,5 +64,4 @@ export default class TaskList extends Component {
 TaskList.propTypes = {
   title: PropTypes.string.isRequired,
   listId: PropTypes.string.isRequired,
-  tasks: PropTypes.array.isRequired,
 };
