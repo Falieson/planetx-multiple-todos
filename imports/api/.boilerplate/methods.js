@@ -1,3 +1,25 @@
+// # SimpleSchema
+// https://github.com/aldeed/meteor-simple-schema#the-object-to-validate
+
+// [SimpleSchema Array](https://github.com/aldeed/meteor-simple-schema#schema-keys)
+// export const updateList = new ValidatedMethod({
+//   name: 'taskLists.update',
+//   validate: new SimpleSchema({
+//     listId:     {type: String},
+//     tasks:      {type: [Object]},
+//   }).validator(),
+//   run({ listId, tasks }) {
+//     // Make sure the user is logged in before inserting a task
+//     // if (! this.userId) {
+//     //   throw new Meteor.Error('not-authorized');
+//     // }
+//     console.log("Arguments: ", arguments);
+//
+//     Lists.update(listId, {$set: {tasks}});
+//   }
+// });
+
+
 // Typical methods are to CRUD a collection item
 
 // # Validated Methods

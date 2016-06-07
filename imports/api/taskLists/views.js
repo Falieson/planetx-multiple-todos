@@ -10,44 +10,53 @@ import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
 import { Lists } from './collections.js';
+import { TaskItemViews } from '../taskItems/views.js';
 
-export const TaskListViews = ()=> {
-  const getdocs = (type, options)=> {
-    let query;
-    if(type =="all"){
-      query = {
-        _id: {$ne: "init"},
-        $or: [
-          { private: { $ne: true } },
-          { owner: this.userId },
-        ],
-      };
-    } else if(type == "one") {
-      query = {
-        options,
-        $or: [
-          { private: { $ne: true } },
-          { owner: this.userId },
-        ],
-      };
-    }
+const queryType = (type, options)=> {
+  let query;
+  if(type =="all"){
+    query = {
+      _id: {$ne: "init"},
+      $or: [
+        { private: { $ne: true } },
+        { owner: this.userId },
+      ],
+    };
+  } else if(type == "one") {
+    query = {
+      options,
+      $or: [
+        { private: { $ne: true } },
+        { owner: this.userId },
+      ],
+    };
+  }
 
-    return Lists.find(query);
-  };
-  const all = ()=> {
-    if(Meteor.isClient){
-      return getdocs("all").fetch();
-    } else {
-      return getdocs("all");
-    }
-  };
-  const one = (target) => {
-    if(Meteor.isClient){
-      return Lists.findOne(target);
-    } else {
-      return getdocs("one", target);
-    }
-  };
-
-  return {find: {all, one}};
+  return query;
 };
+
+const all = (fields)=> {
+  if(Meteor.isClient){
+    return Lists.find(queryType("all"), fields).fetch();
+  } else {
+    return Lists.find(queryType("all"));
+  }
+};
+const one = (target) => {
+  if(Meteor.isClient){
+    return Lists.findOne(target);
+  } else {
+    return Lists.find(queryType("one", target));
+  }
+};
+const tasksFor = (listId)=> {
+  if(Meteor.isClient){
+    const results = TaskItemViews.find.select({listId: listId});
+    console.log("results", results);
+    return results;
+  } else {
+    return Tasks.find({listId: listId});
+  }
+}
+
+export const TaskListViews = {find: {all, one, tasksFor}};

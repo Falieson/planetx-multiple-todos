@@ -15,7 +15,6 @@ caching-html-compiler@1.0.6
 callback-hook@1.0.8
 check@1.2.1
 coffeescript@1.0.17
-dburles:collection-helpers@1.0.4
 dburles:factory@1.0.0
 ddp@1.2.5
 ddp-client@1.2.7

@@ -1,12 +1,13 @@
-<h1><strong>Current Branch: '3/task_collections'</strong></h1>
+<h1><strong>Latest Finished Branch: '3/task_collections'</strong></h1>
 
 <!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:0 orderedList:0 -->
 
 - [About](#about)
+  - [Screenshots](#screenshots)
   - [Caveats](#caveats)
   - [Differences from Meteor's React Todo Tutorial](#differences-from-meteors-react-todo-tutorial)
   - [Customizations](#customizations)
-  - [Too Advanced? Start here...](#too-advanced-start-with)
+  - [Too Advanced? Start here...](#too-advanced-start-here)
   - [Later Versions](#later-versions)
 - [Install](#install)
   - [Meteor Framework](#meteor-framework)
@@ -22,6 +23,7 @@
 
 <!-- /TOC -->
 
+
 # About
 This meteor app can be used as a boilerplate for starting a large scale production application. The major libraries are: React, Apollo, & Material. The imports directory contains a basic Todos application which can be used as example / sample code for your app. Other tutorials typically focus on a SPA application, but this is designed to be a Multipage boilerplate used for a real world application that will eventually have a team of developers.
 
@@ -30,6 +32,9 @@ Meteor is chosen as the NodeJS build framework because it is designed to reduce 
 I have structured the app for a verbose file structure. A collaborative development environment, can cause many file changes in a day. My theory is that dissolving functionality as much as possible will reduce merge conflicts.
 
 Running the provided application provides a router, accounts system, and a simple todos app. The app displays a user's "List of Tasks" on the home page and a profile page is accessible to registered users.
+
+### Screenshots
+![Branch: 3/task_collections](docs/images/planetx_branch-3_task-collections.png)
 
 ### Caveats
 I've been using Meteor for 1-year, which means that there are a lot of new changes in 1.3 and standards that have evolved while I was working with v=<1.2 . Making this boilerplate helps me in many ways, but most of all, to understand new standards that haven't solidified into common practice. If you have more than a year of production team engineering experience then you probably know more than me (so any Issues or PRs are appreciated). If you are experienced you will also understand who I'm building this boilerplate for.
@@ -102,11 +107,11 @@ $ meteor
 ### Project Structure
 Start with the `/docs/` folder
 
-1. Project.md       - Project Current Stage, Plan, History
-1. CommitJournal.md - Message and Notes
-1. Structure.md     - Sketch of final app structure
-1. References.md    - Tutorials and Repos
-1. Environment.md   - Some Regex and Mods from my Env
+1. ![Project.md](/docs/Project.md)       - Project Current Stage, Plan, History
+1. ![CommitJournal.md](/docs/CommitJournal.md) - Message and Notes
+1. ![Structure.md](/docs/Structure.md)     - Sketch of final app structure
+1. ![References.md](/docs/References.md)    - Tutorials and Repos
+1. ![Environment.md](/docs/Environment.md)   - Some Regex and Mods from my Env
 
 ### Tutorials and Learning
 Start with these two files, they are updated every commit

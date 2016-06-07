@@ -8,12 +8,12 @@ import Paper from 'material-ui/Paper';
 
 import TaskLists from './pages/Lists.jsx';
 import { TaskListViews } from '/imports/api/taskLists/views.js';
-import { TaskListActions } from '/imports/api/taskLists/actions.js';
+import { TaskListSubs } from '/imports/api/taskLists/subscriptions.js';
 
 // App component - represents the whole app
 class App extends Component {
   render() {
-    TaskListActions().find.all;
+    TaskListSubs.find.all;
     return ( <TaskLists lists={this.props.lists} /> );
   }
 }
@@ -24,6 +24,6 @@ App.propTypes = {
 
 export default createContainer(()=> {
   return {
-    lists: TaskListViews().find.all(),
+    lists: TaskListViews.find.all({fields: {_id: 1, title: 1} }),
   };
 }, App );

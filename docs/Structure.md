@@ -1,5 +1,5 @@
 # NOTE
-As of this commit - it's been a while since I've updated this structure file. At the end of this branch I'll make sure to do that to represent the boilerplates in each domain.
+Updated the structure to represent `commit: 3.C.3) Data: Denormalize to Multiple Collections`, for more info start with `/docs/CommitJournal.md`, then go to `Project.md`.
 
 Basic structure supplied by [Meteor 1.3 Guide - App Structure (Link, 20160601)](http://guide.meteor.com/structure.html)
 
@@ -9,7 +9,7 @@ Final Structure based on collaboration with Stackoverflow and Gitter/meteor#mete
 client/                        # client entry point, imports all client code
   main.html                    # react-root node, imports roboto for material
   main.jsx                     # imports ui
-  main.css                     # global css
+  main.css                     # global css, less, scss
 imports/
   startup/
     client/
@@ -23,18 +23,22 @@ imports/
   api/
     api.js                     # client & server api calls like methods
     api-server.js              # server only api calls like publications
+    helpers/                   # shared by multiple APIs
+      subscriptions.js         
     lists/                     # a unit of domain logic
       server/
+        fixtures.js            # enter some default data into the DB - good for testing API
         publications.js        # all list-related publications
         publications.tests.js  # tests for the list publications
-      _lists.tests.js          # index/import of all the tests
       collections.js           # definition of the Lists collection
+      factories.js             # generate a default object of desired model
+      collectionHelpers.js     # Join/Transform goes here
       methods.js               # methods related to lists
       methods.tests.js         # tests for those methods
-      methods-pubsub.js        # methods used in both pub&sub
-      methods-pubsub.tests.js  # tests for pubsub methods
       subscriptions.js         # all list-related subscriptions
       subscriptions.tests.js   # tests for the list subscriptions
+      views.js                 # methods used in both pub&sub
+      views.tests.js           # tests for pubsub methods
   ui/
     components/                # all reusable components in the application
       taskList/                # split by domain

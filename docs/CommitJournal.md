@@ -1,7 +1,42 @@
 # 3. Task: Collections API
 ### 3.C) Task Items & Lists
-##### 3.C.2) Use Views and Actions to deliver Data
+##### 3.C.3) Denormalize to Multiple Collections
 commit: `{this}`
+
+branch: `3/task_collections`
+
+Message: `3.C.3) Data: Denormalize to Multiple Collections`
+
+Notes:
+*  `Using List's ID to return Tasks`
+*  `Updated Structure.md to represent current taskLists directory`
+*  `Tried to use [dburles:collection-helpers](https://github.com/dburles/meteor-collection-helpers) for collection joins but received errors. Went with passing the parentId and recording childIds, later I should update this commit with either transform or the collection helpers.`
+
+Files:
+* `mod: docs/Structure.md`
+* `new: imports/api/helpers/subscriptions.js`
+* `new: imports/api/taskLists/helpers.js`
+* `mov: imports/api/taskLists/actions.js ->  * subscriptions.js *`
+* `mov: imports/api/taskItems/actions.js ->  * subscriptions.js *`
+* `mod: imports/ui/App.jsx`
+* `mod: imports/ui/components/taskList/List.jsx`
+* `mod: imports/api/taskItems/server/publications.js`
+* `mod: imports/api/taskItems/views.js`
+* `imports/api/taskLists/`
+  * `mod: collections.js`
+  * `mod: factories.js`
+  * `mod: methods.js`
+  * `mod: server/fixtures.js`
+  * `mod: server/publications.js`
+  * `mod: views.js`
+
+
+  References:
+  * [Denormalizing into Multiple Collections]( http://guide.meteor.com/collections.html#denormalization)
+  * [Meteor Tutorial - React-simple-todos](https://www.meteor.com/tutorials/react/collections)
+
+##### 3.C.2) Use Views and Actions to deliver Data
+commit: `#93b4831`
 
 branch: `3/task_collections`
 

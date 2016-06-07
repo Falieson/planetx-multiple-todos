@@ -17,7 +17,6 @@ react-meteor-data       # Recommended meteor data library
 # DB
 mongo                   # The database Meteor supports right now
 aldeed:simple-schema
-dburles:collection-helpers
 tmeasday:publish-counts
 ddp-rate-limiter
 
