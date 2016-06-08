@@ -1,21 +1,21 @@
-import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'lodash'
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import {List} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 
-import { TaskListViews } from '/imports/api/taskLists/views.js';
-import { Lists } from '/imports/api/taskLists/collections.js';
+import { TaskListViews } from '../../../api/taskLists/views.js';
+import { Lists } from '../../../api/taskLists/collections.js';
 
 import TaskItem from '../taskItem/Item.jsx';
-import { TaskItemSubs } from '/imports/api/taskItems/subscriptions.js';
-import { insertTask } from '/imports/api/taskItems/methods.js';
+import { TaskItemSubs } from '../../../api/taskItems/subscriptions.js';
+import { insertTask, deleteTask } from '../../../api/taskItems/methods.js';
 
 
 // Task List component - Lists out all the tasks
@@ -26,37 +26,6 @@ export default class TaskList extends Component {
     this.state = {
       newTaskText: '',
     };
-  }
-
-  getTasks() {
-    return TaskListViews.find.tasksFor(this.props.listId);
-  }
-  renderTaskList() {
-    return this.getTasks().map( (task) => (<TaskItem key={task._id} task={task} />) );
-  }
-
-  handleTaskForm(event) {
-    this.setState({ newTaskText: event.target.value });
-
-    if (event.key === 'Enter') {
-      insertTask.call({listId: this.props.listId, text: event.target.value});
-      event.target.value = '';
-    }
-  }
-  renderTaskForm() {
-    return (
-      <TextField ref="textInput" onKeyDown={this.handleTaskForm.bind(this)} hintText="Input the task name" floatingLabelText="New Task Name" />
-    );
-  }
-
-  renderList() {
-    return (
-      <List>
-        <Subheader>{this.props.title}</Subheader>
-        {this.renderTaskList()}
-        {this.renderTaskForm()}
-      </List>
-    );
   }
 
   render() {
@@ -74,11 +43,48 @@ export default class TaskList extends Component {
     };
 
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme()} className="container">
+      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)} className="container">
          <Paper style={style} zDepth={2} rounded={false} children={this.renderList()}/>
       </MuiThemeProvider>
     );
   }
+
+  renderList() {
+    return (
+      <List>
+        <Subheader>{this.props.title}</Subheader>
+        {this.renderTaskList()}
+        {this.renderTaskForm()}
+      </List>
+    );
+  }
+
+  getTasks() {
+    return TaskListViews.find.tasksFor(this.props.listId);
+  }
+  renderTaskList() {
+    return this.getTasks().map( (task) => (<TaskItem key={task._id} task={task} onDelete={this.onDeleteTaskItem} />) );
+  }
+  onDeleteTaskItem = taskId => {
+    deleteTask.call({taskId: taskId}); //update DB
+    const tasks = _.remove(this.props.tasks, {_id: taskId})
+    this.setState({ tasks: tasks })
+  }
+
+  renderTaskForm() {
+    return (
+      <TextField ref="textInput" onKeyDown={this.handleTaskForm.bind(this)} hintText="Input the task name" floatingLabelText="New Task Name" />
+    );
+  }
+  handleTaskForm(event) {
+    this.setState({ newTaskText: event.target.value });
+
+    if (event.key === 'Enter') {
+      insertTask.call({listId: this.props.listId, text: event.target.value});
+      event.target.value = '';
+    }
+  }
+
 }
 
 TaskList.propTypes = {

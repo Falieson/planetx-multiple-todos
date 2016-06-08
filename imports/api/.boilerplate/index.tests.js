@@ -1,6 +1,6 @@
 // import React        from 'react';
 // import { chai }     from 'meteor/practicalmeteor:chai';
-// import importTest from '/imports/api/helpers/importTest.js';
+// import importTest from '../imports/api/helpers/importTest.js';
 //
 // console.log("Importing Tests", importTest);
 //

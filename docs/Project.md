@@ -16,11 +16,9 @@
 
 
 # II. Current: (3) Task: Collections API
-### 4. Task: Forms and Events
-
+### 5. Task: Update and Remove Tasks
 
 # III. Plan
-### 5. Task: Update and Remove Tasks
 ### 6. Task: Temporary UI State
 
 ### 7. Task: Layouts & Header
@@ -96,6 +94,8 @@
   1.  Data: Multiple Collections
 ##### D)  **incomplete** Test Coverage for API
 ##### E)  **incomplete** Apollo interface for Mongo
+
+### 4. Task: Forms and Events
 
 # V. Project Structure
 1. Readme.md         - Summary of Application

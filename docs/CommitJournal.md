@@ -1,5 +1,42 @@
-# 4. Task: Form and Events
+# 5. Task: Update and Delete
 commit: `{this}`
+
+branch: `5/task_update_remove`
+
+Message: `5) Replaced Toggler w/ Controller Menu: SetComplete, deleteTask`
+
+Notes:
+* TODO: clean up packages.json and some other clean up resulting from big refactor
+* updated all imports  to be relative
+* toggler changed to iconMenu
+* Ended up spending a lot of time doing discovery for new topics:
+  * `React Component and PropType`
+  * `meteor-babel-webpack`: **all imports** must be relative
+  * `material-ui dependencies`
+
+Files:
+*  `client/main.jsx'
+*  `server/main.js`
+*  `imports/ui/App.jsx`
+*  `imports/ui/components/taskItem/Item.jsx`
+*  `imports/ui/components/taskList/List.jsx`
+*  `imports/startup/server/fixtures.js`
+*  `imports/startup/server/index.js`
+*  `imports/api/api-server.js`
+*  `imports/api/taskItems`
+  *  `/server/fixtures.js`
+  *  `methods.js`
+  *  `subscriptions.js`
+  *  `views.js`
+*  `imports/api/taskLists/`
+  *  `/server/fixtures.js`
+  *  `subscriptions.js`
+  *  `views.js`
+
+
+
+# 4. Task: Form and Events
+commit: `#0a6d419`
 
 branch: `4/forms_events`
 
@@ -14,6 +51,7 @@ Files:
 *  `imports/api/taskLists/views.js`
 
 References:
+* [Using Babel in Meteor - Link, 20160607](https://github.com/thereactivestack/meteor-webpack/tree/master/packages/webpack/)
 * [Forms and Events - Link, 20160607](https://www.meteor.com/tutorials/react/forms-and-events)
 
 # 3. Task: Collections API

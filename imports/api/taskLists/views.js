@@ -19,7 +19,7 @@ const queryType = (type, options)=> {
       _id: {$ne: "init"},
       $or: [
         { private: { $ne: true } },
-        { owner: this.userId },
+        { owner: this && this.userId? this.userId : undefined },
       ],
     };
   } else if(type == "one") {
@@ -27,7 +27,7 @@ const queryType = (type, options)=> {
       options,
       $or: [
         { private: { $ne: true } },
-        { owner: this.userId },
+        { owner: this && this.userId? this.userId : undefined },
       ],
     };
   }
