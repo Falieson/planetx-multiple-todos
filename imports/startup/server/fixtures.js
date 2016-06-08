@@ -2,11 +2,11 @@
 // CALLEDBY /imports/startup/server/index.js
 // [Startup Files](http://guide.meteor.com/structure.html#startup-files)
 
-import '/imports/api/taskItems/server/fixtures.js';
-import '/imports/api/taskLists/server/fixtures.js';
+import '../../api/taskItems/server/fixtures.js';
+import '../../api/taskLists/server/fixtures.js';
 
 // Moved below to the taskLists api
-// import genTaskList from '/imports/api/factories/taskList.js';
+// import genTaskList from '../imports/api/factories/taskList.js';
 //
 // if( Meteor.isServer ){
 //

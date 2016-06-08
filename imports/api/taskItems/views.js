@@ -17,7 +17,7 @@ const all = ()=> {
     return results;
   } else {
     const results= Tasks.find();
-    console.log(`Publishing All (${results.count()}) Tasks: `, results.fetch());
+    // console.log(`Publishing All (${results.count()}) Tasks: `, results.fetch());
     return results;
   }
 };
@@ -26,7 +26,7 @@ const select = (target) => {
     return Tasks.find(target).fetch();
   } else {
     const results = Tasks.find(target);
-    console.log(`Publishing Select (${results.count()}) Tasks: `, results.fetch());
+    // console.log(`Publishing Select (${results.count()}) Tasks: `, results.fetch());
     return results;
   }
 };

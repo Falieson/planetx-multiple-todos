@@ -4,7 +4,7 @@
 // import { Tasks } from '../collections.js';
 //
 // import '../factories.js';
-// import { insertTask } from '/imports/api/taskItems/methods.js';
+// import { insertTask } from '../imports/api/taskItems/methods.js';
 
 // Tasks are created in `taskLists/server/fixtures.js`
 // if( Meteor.isServer ){

@@ -23,7 +23,7 @@ export const insertTask = new ValidatedMethod({
     // if (! this.userId) {
     //   throw new Meteor.Error('not-authorized');
     // }
-    
+
     return Tasks.insert({
       createdAt: new Date(),
       owner: this.userId? this.userId : undefined,
@@ -33,5 +33,37 @@ export const insertTask = new ValidatedMethod({
       checked,
     });
 
+  }
+});
+
+export const updateTask = new ValidatedMethod({
+  name: 'taskItems.update',
+  validate: new SimpleSchema({
+    taskId:   {type: String },
+    text:     {type: String, optional: true },
+    checked:  {type: Boolean, optional: true },
+  }).validator(),
+  run({taskId, text, checked }) {
+
+    let thisTask = Tasks.findOne(taskId);
+    if(text != undefined){ thisTask.text = text; }
+    if(checked != undefined){ thisTask.checked = checked; }
+    delete thisTask._id;
+
+    Tasks.update({_id: taskId}, {
+      $set: thisTask
+    });
+  }
+});
+
+export const deleteTask = new ValidatedMethod({
+  name: 'taskItems.delete',
+  validate: new SimpleSchema({
+    taskId:   {type: String },
+  }).validator(),
+  run({ taskId }) {
+    console.log(`Deleting ${taskId}`);
+
+    Tasks.remove({_id: taskId});
   }
 });

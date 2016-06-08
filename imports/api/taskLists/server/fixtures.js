@@ -2,11 +2,11 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
 import { Lists } from '../collections.js';
-import { insertList, updateList } from '/imports/api/taskLists/methods.js';
-import { insertTask } from '/imports/api/taskItems/methods.js';
+import { insertList, updateList } from '../methods.js';
+import { insertTask } from '../../taskItems/methods.js';
 
 import '../factories.js'; // #Factory.build('taskList')
-import '/imports/api/taskItems/factories.js'; // #Factory.build('taskItem')
+import '../../taskItems/factories.js'; // #Factory.build('taskItem')
 
 const generatedTasks = (listId)=> {
   let newTask = Factory.build('taskItem', {listId});

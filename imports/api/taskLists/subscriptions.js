@@ -7,7 +7,7 @@
 */
 
 import { Meteor } from 'meteor/meteor';
-import { collectionsSubscribe } from '/imports/api/helpers/subscriptions.js';
+import { collectionsSubscribe } from '../helpers/subscriptions.js';
 
 const all = collectionsSubscribe('taskLists');
 
