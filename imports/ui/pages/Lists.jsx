@@ -4,8 +4,6 @@ import { Random } from 'meteor/random'
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 
 import TaskList from '../components/taskList/List.jsx';
@@ -41,9 +39,7 @@ export default class TaskLists extends Component {
     };
 
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme()} className="container">
-        <Paper style={style} zDepth={1} rounded={false} children={this.renderTaskList()}/>
-      </MuiThemeProvider>
+      <Paper style={style} zDepth={1} rounded={false} children={this.renderTaskList()}/>
     );
   }
 }

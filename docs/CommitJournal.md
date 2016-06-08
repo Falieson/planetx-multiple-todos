@@ -1,9 +1,27 @@
 # 5. Task: Update and Delete
+### 5.B.) Task Item Expiration
+##### 5.B.1) Branch Init
 commit: `{this}`
+
+branch: `5/extraCredit/task_expiration`
+
+Message: `5.B.1) INIT: Extra Credit Assignment`
+
+Notes:
+* `Starting the branch with no work done.`
+* `Looked for issues throughout base to improve INIT`
+
+Files:
+* `docs/ExtraCredit.md`
+* `docs/Project.md`
+
+
+### 5.A.) Task List Update and Remove Task
+commit: `#957734c`
 
 branch: `5/task_update_remove`
 
-Message: `5) Replaced Toggler w/ Controller Menu: SetComplete, deleteTask`
+Message: `5.A) Replaced Toggler w/ Controller Menu: SetComplete, deleteTask`
 
 Notes:
 * TODO: clean up packages.json and some other clean up resulting from big refactor
@@ -15,7 +33,7 @@ Notes:
   * `material-ui dependencies`
 
 Files:
-*  `client/main.jsx'
+*  `client/main.jsx`
 *  `server/main.js`
 *  `imports/ui/App.jsx`
 *  `imports/ui/components/taskItem/Item.jsx`
