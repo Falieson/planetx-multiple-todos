@@ -16,23 +16,10 @@
 
 
 # II. Current: (3) Task: Collections API
-*  A)  Setup API
-  * A.1)  Simple Structure
-  * A.2)  Task Items & Lists Structure
-*  B)  Task Items & Lists - API & Fixtures
-  * B.1)  Fixtures: Simple Fixture Example
-  * B.2)  Fixtures: Task Items & Lists
-  * B.3)  Render: Collection Docs/Items
-*  C)  <strong>Data: Publish & Subscribe</strong>
-  * C.1)  <strong>Data: Simple Publish and Subscribe</strong>
-  * C.2)  <strong>Data: Views and Actions</strong>
-  * C.3)  <strong>Data: Multiple Collections</strong>
-*  D) Test Coverage for API
-*  E) Apollo interface for Mongo
+### 4. Task: Forms and Events
 
 
 # III. Plan
-### 4. Task: Forms and Events
 ### 5. Task: Update and Remove Tasks
 ### 6. Task: Temporary UI State
 
@@ -95,6 +82,21 @@
   1. Test: Render=>       creates multiple List Items
   1. Test: Render=>       multiple lists
 
+### 3) Task: Collections API
+##### A)  Setup API
+  1.  Simple Structure
+  1.  Task Items & Lists Structure
+##### B)  Task Items & Lists - API & Fixtures
+  1.  Fixtures: Simple Fixture Example
+  1.  Fixtures: Task Items & Lists
+  1.  Render: Collection Docs/Items
+##### C)  Data: Publish & Subscribe
+  1.  Data: Simple Publish and Subscribe
+  1.  Data: Views and Actions
+  1.  Data: Multiple Collections
+##### D)  **incomplete** Test Coverage for API
+##### E)  **incomplete** Apollo interface for Mongo
+
 # V. Project Structure
 1. Readme.md         - Summary of Application
 1. Project.md        - Project Current Stage, Plan, History
@@ -140,4 +142,4 @@
       * Totals
       * Averages
         * Time from Task Started to Created
-        * Completion Time (this.sinceStarted(),    this.sinceCreated())
+        * Completion Time (this.sinceStarted(), this.sinceCreated())

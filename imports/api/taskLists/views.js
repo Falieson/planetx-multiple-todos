@@ -51,9 +51,7 @@ const one = (target) => {
 };
 const tasksFor = (listId)=> {
   if(Meteor.isClient){
-    const results = TaskItemViews.find.select({listId: listId});
-    console.log("results", results);
-    return results;
+    return TaskItemViews.find.select({listId: listId});
   } else {
     return Tasks.find({listId: listId});
   }

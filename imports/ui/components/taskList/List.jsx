@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
 import {List} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 
@@ -14,6 +15,7 @@ import { Lists } from '/imports/api/taskLists/collections.js';
 
 import TaskItem from '../taskItem/Item.jsx';
 import { TaskItemSubs } from '/imports/api/taskItems/subscriptions.js';
+import { insertTask } from '/imports/api/taskItems/methods.js';
 
 
 // Task List component - Lists out all the tasks
@@ -21,13 +23,30 @@ export default class TaskList extends Component {
   constructor(props) {
     super(props);
     this.tasks = [];
+    this.state = {
+      newTaskText: '',
+    };
   }
+
   getTasks() {
     return TaskListViews.find.tasksFor(this.props.listId);
   }
-
   renderTaskList() {
     return this.getTasks().map( (task) => (<TaskItem key={task._id} task={task} />) );
+  }
+
+  handleTaskForm(event) {
+    this.setState({ newTaskText: event.target.value });
+
+    if (event.key === 'Enter') {
+      insertTask.call({listId: this.props.listId, text: event.target.value});
+      event.target.value = '';
+    }
+  }
+  renderTaskForm() {
+    return (
+      <TextField ref="textInput" onKeyDown={this.handleTaskForm.bind(this)} hintText="Input the task name" floatingLabelText="New Task Name" />
+    );
   }
 
   renderList() {
@@ -35,6 +54,7 @@ export default class TaskList extends Component {
       <List>
         <Subheader>{this.props.title}</Subheader>
         {this.renderTaskList()}
+        {this.renderTaskForm()}
       </List>
     );
   }

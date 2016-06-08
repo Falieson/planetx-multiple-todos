@@ -1,7 +1,25 @@
+# 4. Task: Form and Events
+commit: `{this}`
+
+branch: `4/forms_events`
+
+Message: `4) New Task Form: Create new tasks in a list`
+
+Notes:
+*  `Simple enough commit, going to move on to next branch`
+
+Files:
+*  `imports/ui/pages/Lists.jsx`
+*  `imports/ui/components/taskList/List.jsx`
+*  `imports/api/taskLists/views.js`
+
+References:
+* [Forms and Events - Link, 20160607](https://www.meteor.com/tutorials/react/forms-and-events)
+
 # 3. Task: Collections API
 ### 3.C) Task Items & Lists
 ##### 3.C.3) Denormalize to Multiple Collections
-commit: `{this}`
+commit: `#1909487`
 
 branch: `3/task_collections`
 
@@ -30,8 +48,7 @@ Files:
   * `mod: server/publications.js`
   * `mod: views.js`
 
-
-  References:
+References:
   * [Denormalizing into Multiple Collections]( http://guide.meteor.com/collections.html#denormalization)
   * [Meteor Tutorial - React-simple-todos](https://www.meteor.com/tutorials/react/collections)
 
