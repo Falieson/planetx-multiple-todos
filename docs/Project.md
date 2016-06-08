@@ -3,11 +3,11 @@
   <li>Setup</li>
   <li>Hello World</li>
   <li>Task: Components</li>
-  <li><u><strong>Task: Collections API</strong></u></li>
-</ol>
-<ol start="4">
+  <li>Task: Collections API</li>
   <li>Task: Forms and Events</li>
-  <li>Task: Update and Remove</li>
+  <li><u><strong>Task: Update and Remove</strong></u></li>
+</ol>
+<ol start="6">
   <li>Task: Temporary UI State</li>
   <li>Task: Layouts & Header</li>
   <li>Router</li>
@@ -15,8 +15,12 @@
 </ol>
 
 
-# II. Current: (3) Task: Collections API
-### 5. Task: Update and Remove Tasks
+# II. Current: (5) Task: Update and Remove Tasks
+* A)  Task List Update (Add Items) & Remove Items
+* <strong>B)  Task Item Expiration</strong>
+* C)  CRUD Everything
+  * New/Delete Task Lists, Update Task List Title
+  * Update Task Item Text
 
 # III. Plan
 ### 6. Task: Temporary UI State

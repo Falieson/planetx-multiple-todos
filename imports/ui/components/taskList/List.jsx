@@ -2,9 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash'
 
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import {List} from 'material-ui/List';
@@ -43,8 +42,8 @@ export default class TaskList extends Component {
     };
 
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)} className="container">
-         <Paper style={style} zDepth={2} rounded={false} children={this.renderList()}/>
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <Paper style={style} zDepth={2} rounded={false} children={this.renderList()}/>
       </MuiThemeProvider>
     );
   }

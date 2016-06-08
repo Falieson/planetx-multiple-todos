@@ -26,7 +26,11 @@ export default class TaskItem extends Component {
 
   render() {
     const renderMenu = (
-      <IconMenu iconButtonElement={this.renderMenuButton()}>
+      <IconMenu
+        anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+        targetOrigin={{horizontal: 'left', vertical: 'top'}}
+        iconButtonElement={this.renderMenuButton()}
+      >
         {this.renderCompleteMenuButton()}
         {this.renderDeleteMenuButton()}
       </IconMenu>

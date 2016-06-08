@@ -1,7 +1,7 @@
 {
   "name": "planetx-boilerplate",
   "version": "0.0.1",
-  "description": "Boilerplate for large scale app building with React, Apollo, Meteor, and Material",
+  "description": "Boilerplate for large scale app building with React and Material UI,  and Meteor and Apollo.",
   "author": "Falieson <falieson@gmail.com> ",
   "contributors": [
     {

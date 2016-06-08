@@ -1,4 +1,5 @@
-<h1><strong>Current Branch: '5/task_update-remove'</strong></h1>
+<h1><strong>Current Branch: '5/extraCredit/task_expiration'</strong></h1>
+This branch is a little more verbose than my typical commits because it is written with reviewers in mind. Follow along with [/docs/ExtraCredit.md](https://github.com/Falieson/planetx-boilerplate/tree/5/extraCredit/task_expiration/docs/ExtraCredit.md) and [/docs/CommitJournal.md](https://github.com/Falieson/planetx-boilerplate/tree/5/extraCredit/task_expiration/docs/CommitJournal.md) .
 
 <!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:0 orderedList:0 -->
 
@@ -34,7 +35,7 @@ I have structured the app for a verbose file structure. A collaborative developm
 Running the provided application provides a router, accounts system, and a simple todos app. The app displays a user's "List of Tasks" on the home page and a profile page is accessible to registered users.
 
 ### Screenshots
-![Branch: 5/task_update-remove](docs/images/planetx_branch-5_task-update-delete)
+![Screenshot](docs/images/planetx_branch-5_task-update-delete.png)
 
 ### Caveats
 I've been using Meteor for 1-year, which means that there are a lot of new changes in 1.3 and standards that have evolved while I was working with v=<1.2 . Making this boilerplate helps me in many ways, but most of all, to understand new standards that haven't solidified into common practice. If you have more than a year of production team engineering experience then you probably know more than me (so any Issues or PRs are appreciated). If you are experienced you will also understand who I'm building this boilerplate for.
@@ -107,11 +108,11 @@ $ meteor
 ### Project Structure
 Start with the `/docs/` folder
 
-1. ![Project.md](/docs/Project.md)       - Project Current Stage, Plan, History
-1. ![CommitJournal.md](/docs/CommitJournal.md) - Message and Notes
-1. ![Structure.md](/docs/Structure.md)     - Sketch of final app structure
-1. ![References.md](/docs/References.md)    - Tutorials and Repos
-1. ![Environment.md](/docs/Environment.md)   - Some Regex and Mods from my Env
+1. [Project.md](https://github.com/Falieson/planetx-boilerplate/tree/5/extraCredit/task_expiration/docs/Project.md)       - Project Current Stage, Plan, History
+1. [CommitJournal.md](https://github.com/Falieson/planetx-boilerplate/tree/5/extraCredit/task_expiration/docs/CommitJournal.md) - Message and Notes
+1. [Structure.md](https://github.com/Falieson/planetx-boilerplate/tree/5/extraCredit/task_expiration/docs/Structure.md)     - Sketch of final app structure
+1. [References.md](https://github.com/Falieson/planetx-boilerplate/tree/5/extraCredit/task_expiration/docs/References.md)    - Tutorials and Repos
+1. [Environment.md](https://github.com/Falieson/planetx-boilerplate/tree/5/extraCredit/task_expiration/docs/Environment.md)   - Some Regex and Mods from my Env
 
 ### Tutorials and Learning
 Start with these two files, they are updated every commit
