@@ -21,6 +21,8 @@
 * [Apollostack's Discourse Demo](https://github.com/apollostack/apollo-demo/tree/5d045ff807a08a754628ad9edf8e17526d6ceac0) - Viewed 20160601, Authored 20160422
 * [GraphQL Server via Apollo & Meteor](https://github.com/abhiaiyer91/sample-graphql-meteor-server/tree/5cb3cf7f5c117e968de7cf1e15aa12a918e15a91) - Viewed 20160602, Authored 20160525
 
+# Setup
+* [Webpack](https://github.com/thereactivestack/meteor-webpack/tree/master/packages/webpack)
 
 # Documentation
 ### Meteor

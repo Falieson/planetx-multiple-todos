@@ -1,7 +1,57 @@
 # 5. Task: Update and Delete
 ### 5.B.) Task Item Expiration
-##### 5.B.1) Branch Init
+##### 5.B.2) Rebuilt Task Item as custom component
 commit: `{this}`
+
+branch: `5/extraCredit/task_expiration`
+
+Message: `5.B.2) Rebuilt task item into custom component`
+
+Notes:
+* `Setup react-redux`
+* `Renamed 'checked' to 'completed'`
+* `API development hampered by slow build times since adding webpack`
+
+Files:
+* `package.json`
+* `.babelrc`
+* `imports/ui/store/store.js`
+* `imports/ui/App.jsx`
+* `imports/ui/actions/setVisibility.js`
+* `imports/ui/actions/updateTask.js`
+* `imports/ui/components/taskItem/Complete.jsx`
+* `imports/ui/components/taskItem/Item.jsx`
+* `imports/ui/components/taskItem/Remove.jsx`
+* `imports/ui/components/taskItem/Stats.jsx`
+* `imports/ui/components/taskItem/Title.jsx`
+* `imports/ui/components/taskItem/UnComplete.jsx`
+* `imports/ui/components/taskList/Header.jsx`
+* `imports/ui/components/taskList/Items.jsx`
+* `imports/ui/components/taskList/List.jsx`
+* `imports/ui/components/taskList/NewItem.jsx`
+* `imports/ui/components/taskList/visibilityToggler.jsx`
+* `imports/ui/pages/Lists.jsx`
+* `imports/ui/pages/TaskLists.jsx`
+* `imports/ui/reducers/rootReducer.js`
+* `imports/ui/reducers/visibilityFilter.js`
+* `imports/api/helpers/subscriptions.js`
+* `imports/api/taskItems/factories.js`
+* `imports/api/taskItems/methods.js`
+* `imports/api/taskItems/server/publications.js`
+* `imports/api/taskItems/subscriptions.js`
+* `imports/api/taskItems/views.js`
+* `imports/api/taskLists/server/fixtures.js`
+* `imports/api/taskLists/server/publications.js`
+* `imports/api/taskLists/subscriptions.js`
+* `imports/api/taskLists/views.js`
+
+References:
+*  [How-We-Redux-Todos](git+https://github.com/abhiaiyer91/How-We-Redux-Todos.git)
+
+
+
+##### 5.B.1) Branch Init
+commit: `#060b654`
 
 branch: `5/extraCredit/task_expiration`
 

@@ -8,5 +8,5 @@ export default Factory.define('taskItem', Tasks, {
   createdAt: new Date(),
   listId:()=> Random.id(),
   text:()=> faker.commerce.productName(),
-  checked: ()=> false,
+  completed: ()=> false,
 });

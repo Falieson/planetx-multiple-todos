@@ -11,30 +11,71 @@ import { check } from 'meteor/check';
 
 import { Tasks } from './collections.js';
 
-const all = ()=> {
+const getQuery = (filter, options)=> {
+  let query = {
+    _id: {$ne: "init"},
+    $or: [
+      { private: { $ne: true } },
+      { owner: this && this.userId? this.userId : undefined },
+    ],
+  };
+
+  if(typeof(options) === 'string'){
+    query = {_id: options, ...query};
+  } else {
+    query = {...options, ...query};
+  }
+
+  switch (filter) {
+    case 'SHOW_COMPLETED':
+      query.completed = true;
+      break;
+    case 'SHOW_ACTIVE':
+      query.completed = false;
+      break;
+    default:
+      break;
+  }
+
+  return query;
+}
+
+const taskItemFields = {_id: 1, title: 1};
+const all = (filter)=> {
+  // console.log("ITEMVIEW: all");
+
   if(Meteor.isClient){
-    const results = Tasks.find().fetch();
+    const results = Tasks.find(getQuery(filter)).fetch();
     return results;
   } else {
-    const results= Tasks.find();
+    const results= Tasks.find(getQuery(filter));
     // console.log(`Publishing All (${results.count()}) Tasks: `, results.fetch());
     return results;
   }
 };
-const select = (target) => {
+const one = (filter, target) => {
+  // console.log("ITEMVIEW: one");
+
+  const options = {_id: target};
   if(Meteor.isClient){
-    return Tasks.find(target).fetch();
+    return Tasks.findOne(getQuery(filter, options), taskItemFields).fetch();
   } else {
-    const results = Tasks.find(target);
-    // console.log(`Publishing Select (${results.count()}) Tasks: `, results.fetch());
-    return results;
+    return Tasks.find(getQuery(filter, options), taskItemFields);
   }
 };
-const one = (target) => {
+const select = (filter, target) => {
+  // console.log("ITEMVIEW: select");
+
+  const options = {listId: target};
+  // console.log("OPTIONS 0> ", options);
+
   if(Meteor.isClient){
-    return Tasks.findOne(target);
+    const result = Tasks.find(getQuery(filter, options), taskItemFields).fetch();
+    return result;
   } else {
-    return Tasks.find(target);
+    const results = Tasks.find(getQuery(filter, options), taskItemFields);
+    // console.log(`Publishing Select (${results.count()}) Tasks: `, results.fetch());
+    return results;
   }
 };
 

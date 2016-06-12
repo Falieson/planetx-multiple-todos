@@ -1,12 +1,28 @@
-import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { render } from 'react-dom';
+import React  from 'react';
+import ReactDOM  from 'react-dom';
+import { Provider } from 'react-redux';
+import Store from '../imports/ui/store/store.js';
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import '../imports/startup/client/index.js';  // --empty--
 import App from '../imports/ui/App.jsx';
 
-Meteor.startup(() => {
+function AppRoot() {
+  return (
+    <div className="todo-container">
+      <Provider store={Store}>
+        <App />
+      </Provider>
+    </div>
+  );
+}
+
+Meteor.startup(()=> {
   injectTapEventPlugin(); // Required for Material IconMenu (v.0.15.0)
-  render(<App />, document.getElementById('react-root'));
+  ReactDOM.render(
+    <AppRoot />,
+    document.getElementById('react-root')
+  );
 });

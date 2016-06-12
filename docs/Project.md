@@ -12,6 +12,7 @@
   <li>Task: Layouts & Header</li>
   <li>Router</li>
   <li>Accounts & Profile</li>
+  <li>Advanced Data</li>
 </ol>
 
 
@@ -48,6 +49,9 @@
   * Render Auth Page
   * Render Profile Page
 
+### 10. Advanced Data
+* [Advanced Publications (Link, 20160607)](http://guide.meteor.com/data-loading.html#complex-auth)
+* Migrations
 
 # IV. History
 ### 0. Setup

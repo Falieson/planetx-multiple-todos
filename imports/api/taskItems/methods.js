@@ -15,9 +15,9 @@ export const insertTask = new ValidatedMethod({
     username: {type: String, optional: true },
     listId: {type: String, optional: true },
     text: { type: String, optional: true },
-    checked: { type: Boolean, optional: true },
+    completed: { type: Boolean, optional: true },
   }).validator(),
-  run({ text , listId, checked}) {
+  run({ text , listId, completed}) {
 
     // Make sure the user is logged in before inserting a task
     // if (! this.userId) {
@@ -30,7 +30,7 @@ export const insertTask = new ValidatedMethod({
       username: this.username? this.username : Meteor.users.findOne(this.userId)? Meteor.users.findOne(this.userId).username : undefined,
       listId,
       text,
-      checked,
+      completed,
     });
 
   }
@@ -41,13 +41,14 @@ export const updateTask = new ValidatedMethod({
   validate: new SimpleSchema({
     taskId:   {type: String },
     text:     {type: String, optional: true },
-    checked:  {type: Boolean, optional: true },
+    completed:  {type: Boolean, optional: true },
   }).validator(),
-  run({taskId, text, checked }) {
+  run({taskId, text, completed }) {
+    console.log(`[API:TaskUpdate]: ${taskId} => completed: ${completed}`);
 
     let thisTask = Tasks.findOne(taskId);
     if(text != undefined){ thisTask.text = text; }
-    if(checked != undefined){ thisTask.checked = checked; }
+    if(completed != undefined){ thisTask.completed = completed; }
     delete thisTask._id;
 
     Tasks.update({_id: taskId}, {

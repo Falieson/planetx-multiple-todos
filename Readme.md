@@ -35,7 +35,7 @@ I have structured the app for a verbose file structure. A collaborative developm
 Running the provided application provides a router, accounts system, and a simple todos app. The app displays a user's "List of Tasks" on the home page and a profile page is accessible to registered users.
 
 ### Screenshots
-![Screenshot](docs/images/planetx_branch-5_task-update-delete.png)
+![Screenshot](docs/images/planetx_branch-5-B_custom_task_redux.png)
 
 ### Caveats
 I've been using Meteor for 1-year, which means that there are a lot of new changes in 1.3 and standards that have evolved while I was working with v=<1.2 . Making this boilerplate helps me in many ways, but most of all, to understand new standards that haven't solidified into common practice. If you have more than a year of production team engineering experience then you probably know more than me (so any Issues or PRs are appreciated). If you are experienced you will also understand who I'm building this boilerplate for.

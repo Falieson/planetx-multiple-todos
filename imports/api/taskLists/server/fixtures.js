@@ -13,7 +13,7 @@ const generatedTasks = (listId)=> {
   const newTaskId = insertTask.call(newTask);
 
   newTask = Object.assign(newTask, {_id: newTaskId});
-  let completedTask = Factory.build('taskItem', {listId, checked: true});
+  let completedTask = Factory.build('taskItem', {listId, completed: true});
 
   const completedTaskId = insertTask.call(completedTask);
   completedTask = Object.assign(completedTask, {_id: completedTaskId});

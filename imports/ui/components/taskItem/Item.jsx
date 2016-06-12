@@ -1,87 +1,100 @@
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
+import { connect }  from 'react-redux';
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import reactMixin from 'react-mixin';
 
-// http://www.material-ui.com/#/customization/colors
-import {grey400, green500, lime400, red500} from 'material-ui/styles/colors';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-import IconButton from 'material-ui/IconButton/IconButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import Delete from 'material-ui/svg-icons/action/delete';
-import Done from 'material-ui/svg-icons/action/done';
-import Assignment from 'material-ui/svg-icons/action/assignment';
+import Paper from 'material-ui/Paper';
+import TaskTitle    from './Title.jsx'
+import CompleteTask from './Complete.jsx';
+import UnCompleteTask from './UnComplete.jsx';
+import RemoveTask   from './Remove.jsx';
+// import TaskStats   from './Stats.jsx';
+//   <TaskStats
+//     taskId = {this.props.taskId}
+//   />
 
-import { ListItem } from 'material-ui/List';
-import { updateTask } from '../../../api/taskItems/methods.js';
-
-// TaskItem component - represents a single task item
-export default class TaskItem extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      checked: this.props.task.checked,
-    };
-  }
-
+// TaskItem: a single task item
+class TaskItem extends Component {
   render() {
-    const renderMenu = (
-      <IconMenu
-        anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-        targetOrigin={{horizontal: 'left', vertical: 'top'}}
-        iconButtonElement={this.renderMenuButton()}
-      >
-        {this.renderCompleteMenuButton()}
-        {this.renderDeleteMenuButton()}
-      </IconMenu>
-    );
+    const style = {
+      marginTop: 2,
+      padding: "4px 0",
+    };
+    const isCompleted = this.props.completed;
 
-    return (
-      <ListItem primaryText={this.props.task.text} rightIconButton={renderMenu} />
-    );
-  }
-
-  renderMenuButton() {
-    return (
-      <IconButton
-        touch={true}
-        tooltip="more"
-        tooltipPosition="bottom-left"
-      >
-        <MoreVertIcon color={grey400} />
-      </IconButton>
-    );
-  }
-  renderCompleteMenuButton() {
-    const icon = (state)=> {
-      if(!state){
-        return (<Done style={{color: '#f23'}} />);
-      } else {
-        return (<Assignment style={{color: '#f23'}} />);
-      }
+    if(isCompleted){
+      return (
+        <Paper style={style} zDepth={1} rounded={true} children={this.renderCompletedItem()}/>
+      );
     }
-    const renderCompleteMessage = (state)=> state? "Not Finished" : "Complete";
+    else {
+      return (
+        <Paper style={style} zDepth={1} rounded={true} children={this.renderIncompleteItem()}/>
+      );
+    }
+  }
 
-    const checked = this.state.checked;
+  renderCompletedItem() {
+    const style = {
+      position: "relative",
+      width: "100%",
+      height: "100%",
+    };
     return (
-      <MenuItem rightIcon={icon(checked)} primaryText={renderCompleteMessage(checked)} onTouchTap={this.handleCompleteTask.bind(this)} />
+      <div style={style}>
+        <TaskTitle
+          title = {this.props.text}
+          completed = {this.props.completed}
+        />
+        <UnCompleteTask
+          taskId = {this.props.taskId}
+          onComplete = {this.props.onComplete}
+        />
+      </div>
     );
   }
-  handleCompleteTask() {
-    const result = !this.state.checked;
-
-    this.setState({ checked: result}); //rerender the UI
-    updateTask.call({taskId: this.props.task._id, checked: result}); //update DB
-  }
-  renderDeleteMenuButton() {
+  renderIncompleteItem() {
+    const style = {
+      position: "relative",
+      width: "100%",
+      height: "100%",
+    };
     return (
-      <MenuItem rightIcon={<Delete />} primaryText="Delete"  onTouchTap={this.handleDeleteTask} />
+      <div style={style}>
+        <CompleteTask
+          taskId = {this.props.taskId}
+          onComplete = {this.props.onComplete}
+        />
+        <TaskTitle
+          title = {this.props.text}
+          completed = {this.props.completed}
+        />
+        <RemoveTask
+          taskId = {this.props.taskId}
+          onDelete = {this.props.onDelete}
+        />
+      </div>
     );
   }
-  handleDeleteTask = event => { this.props.onDelete(this.props.task._id); };
 }
 
 TaskItem.propTypes = {
-  task: PropTypes.object.isRequired,
+  taskId: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  completed: PropTypes.bool.isRequired,
+  onComplete: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
 };
+
+const TaskItemContainer = createContainer( ({ taskId, text, completed, onComplete, onDelete })=> {
+  return {
+    taskId: taskId,
+    text: text,
+    completed: completed? true:false,
+    onComplete: onComplete,
+    onDelete: onDelete
+  };
+}, TaskItem);
+
+export default connect()(TaskItemContainer);

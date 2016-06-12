@@ -1,5 +1,6 @@
-export const collectionsSubscribe = (title, options)=> {
+export const collectionsSubscribe = (title, filter, options)=> {
   if(Meteor.isClient){
-    Meteor.subscribe(title, options);
+    // console.log("OPTIONS> ", options);
+    return Meteor.subscribe(title, filter, options);
   }
 };

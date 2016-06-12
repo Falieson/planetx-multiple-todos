@@ -1,10 +1,9 @@
 For Learners / Tutorial makers, here's an assignment styled look at what will be accomplished in this branch ( 5/extraCredit/task_expiration ).
-
 # 1. Task Expiration
 "Remove task from display if task item is completed & expiration time is past"
-  * if task.expired && task.complete => remove Task
   * if task.expired && !task.complete => show Task
-  * if !task.expired && task.complete => (UsualBehavior) => remove Task
+  * if task.expired && task.complete => archive Task
+  * if !task.expired && task.complete => (UsualBehavior) => archive Task
 
 # 2. Communicative UI
 "Style items based on their urgency"

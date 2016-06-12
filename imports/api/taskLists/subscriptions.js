@@ -9,6 +9,6 @@
 import { Meteor } from 'meteor/meteor';
 import { collectionsSubscribe } from '../helpers/subscriptions.js';
 
-const all = collectionsSubscribe('taskLists');
+const all = (filter)=> collectionsSubscribe('taskLists', filter);
 
 export const TaskListSubs = {find: { all }};

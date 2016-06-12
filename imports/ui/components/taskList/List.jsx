@@ -1,35 +1,24 @@
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
+import { connect }  from 'react-redux';
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import reactMixin from 'react-mixin';
 import _ from 'lodash'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
 import {List} from 'material-ui/List';
-import Subheader from 'material-ui/Subheader';
 
-import { TaskListViews } from '../../../api/taskLists/views.js';
-import { Lists } from '../../../api/taskLists/collections.js';
+import TaskHeader from './Header.jsx';
+import TaskItems from './Items.jsx';
+import NewTaskItem from './NewItem.jsx';
 
-import TaskItem from '../taskItem/Item.jsx';
-import { TaskItemSubs } from '../../../api/taskItems/subscriptions.js';
-import { insertTask, deleteTask } from '../../../api/taskItems/methods.js';
-
+import { insertTask } from '../../../api/taskItems/methods.js';
 
 // Task List component - Lists out all the tasks
-export default class TaskList extends Component {
-  constructor(props) {
-    super(props);
-    this.tasks = [];
-    this.state = {
-      newTaskText: '',
-    };
-  }
-
+class TaskList extends Component {
   render() {
-    TaskItemSubs.find.select(this.props.listId);
-
     const style = {
       height: "100%",
       maxHeight: "500px",
@@ -49,44 +38,31 @@ export default class TaskList extends Component {
   }
 
   renderList() {
+    // if(this.props.listId){console.log("listId 0> ", this.props.listId);}
+
     return (
       <List>
-        <Subheader>{this.props.title}</Subheader>
-        {this.renderTaskList()}
-        {this.renderTaskForm()}
+        <TaskHeader title={this.props.title} />
+        <TaskItems listId={this.props.listId} />
+        <NewTaskItem
+          listId={this.props.listId}
+          onNewTask={this.handleTaskForm}
+        />
       </List>
     );
   }
-
-  getTasks() {
-    return TaskListViews.find.tasksFor(this.props.listId);
-  }
-  renderTaskList() {
-    return this.getTasks().map( (task) => (<TaskItem key={task._id} task={task} onDelete={this.onDeleteTaskItem} />) );
-  }
-  onDeleteTaskItem = taskId => {
-    deleteTask.call({taskId: taskId}); //update DB
-    const tasks = _.remove(this.props.tasks, {_id: taskId})
-    this.setState({ tasks: tasks })
-  }
-
-  renderTaskForm() {
-    return (
-      <TextField ref="textInput" onKeyDown={this.handleTaskForm.bind(this)} hintText="Input the task name" floatingLabelText="New Task Name" />
-    );
-  }
   handleTaskForm(event) {
-    this.setState({ newTaskText: event.target.value });
+    // this.setState({ newTaskText: event.target.value });
 
     if (event.key === 'Enter') {
       insertTask.call({listId: this.props.listId, text: event.target.value});
       event.target.value = '';
     }
   }
-
 }
 
 TaskList.propTypes = {
-  title: PropTypes.string.isRequired,
   listId: PropTypes.string.isRequired,
 };
+
+export default TaskList;
