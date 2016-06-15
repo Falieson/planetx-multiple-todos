@@ -11,14 +11,23 @@ import '../../taskItems/factories.js'; // #Factory.build('taskItem')
 const generatedTasks = (listId)=> {
   let newTask = Factory.build('taskItem', {listId});
   const newTaskId = insertTask.call(newTask);
+  // newTask = Object.assign(newTask, {_id: newTaskId});
 
-  newTask = Object.assign(newTask, {_id: newTaskId});
   let completedTask = Factory.build('taskItem', {listId, completed: true});
-
   const completedTaskId = insertTask.call(completedTask);
-  completedTask = Object.assign(completedTask, {_id: completedTaskId});
+  // completedTask = Object.assign(completedTask, {_id: completedTaskId});
 
-  return [newTask, completedTask];
+
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  let goaledTask = Factory.build('taskItem', {listId, completeBy: tomorrow});
+  const goaledTaskId = insertTask.call(goaledTask);
+
+  return [newTaskId, completedTaskId, goaledTaskId];
+
+  // goaledTask = Object.assign(goaledTask, {_id: goaledTaskId});
+  // list.taskIds = newTasks.map( (task)=> task._id );
+  // return [newTask, completedTask, goaledTask];
 };
 
 const createList = ()=> {
@@ -26,7 +35,6 @@ const createList = ()=> {
   const listId = insertList.call(list);
 
   const newTasks = generatedTasks(listId);
-  list.taskIds = newTasks.map( (task)=> task._id );
 
   updateList.call({listId, taskIds: list.taskIds});
 

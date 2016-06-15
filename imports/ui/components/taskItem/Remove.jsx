@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
-import { red900, green500 } from 'material-ui/styles/colors';
+import { red100, red900 } from 'material-ui/styles/colors';
 import Delete from 'material-ui/svg-icons/action/delete';
 import Archive from 'material-ui/svg-icons/content/archive';
 
@@ -22,7 +22,7 @@ export default class RemoveTaskItem extends Component {
       right: 0,
       top: 0,
       verticalAlign: "middle",
-      marginRight: 4,
+      marginRight: 2,
       cursor: "pointer",
     };
 
@@ -34,15 +34,10 @@ export default class RemoveTaskItem extends Component {
   }
 
   renderIcon() {
-    const style = {
-      width: 20,
-      height: 20,
-    };
-
     return (
       <Delete
-        color={red900}
-        style={style}
+        color={red100}
+        hoverColor={red900}
         onTouchTap={this.handleDelete}
       />
     );

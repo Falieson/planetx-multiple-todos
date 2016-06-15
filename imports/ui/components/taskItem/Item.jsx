@@ -1,18 +1,12 @@
 import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
-import { connect }  from 'react-redux';
 import React, { Component, PropTypes } from 'react';
-import reactMixin from 'react-mixin';
+import { connect }  from 'react-redux';
 
 import Paper from 'material-ui/Paper';
+
 import TaskTitle    from './Title.jsx'
-import CompleteTask from './Complete.jsx';
+import TaskCompleteBtn from './SetComplete.jsx';
 import UnCompleteTask from './UnComplete.jsx';
-import RemoveTask   from './Remove.jsx';
-// import TaskStats   from './Stats.jsx';
-//   <TaskStats
-//     taskId = {this.props.taskId}
-//   />
 
 // TaskItem: a single task item
 class TaskItem extends Component {
@@ -21,7 +15,7 @@ class TaskItem extends Component {
       marginTop: 2,
       padding: "4px 0",
     };
-    const isCompleted = this.props.completed;
+    const isCompleted = this.props.isCompleted;
 
     if(isCompleted){
       return (
@@ -44,12 +38,12 @@ class TaskItem extends Component {
     return (
       <div style={style}>
         <TaskTitle
-          title = {this.props.text}
-          completed = {this.props.completed}
+          title =       {this.props.title}
+          isCompleted = {this.props.isCompleted}
         />
         <UnCompleteTask
-          taskId = {this.props.taskId}
-          onComplete = {this.props.onComplete}
+          taskId =      {this.props.taskId}
+          onComplete =  {this.props.onComplete}
         />
       </div>
     );
@@ -62,39 +56,25 @@ class TaskItem extends Component {
     };
     return (
       <div style={style}>
-        <CompleteTask
-          taskId = {this.props.taskId}
-          onComplete = {this.props.onComplete}
+        <TaskCompleteBtn
+          taskId =      {this.props.taskId}
+          onComplete =  {this.props.onComplete}
         />
         <TaskTitle
-          title = {this.props.text}
-          completed = {this.props.completed}
-        />
-        <RemoveTask
-          taskId = {this.props.taskId}
-          onDelete = {this.props.onDelete}
+          title =       {this.props.title}
+          isCompleted = {this.props.isCompleted}
         />
       </div>
     );
   }
+
 }
 
 TaskItem.propTypes = {
   taskId: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  completed: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
   onComplete: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
 };
 
-const TaskItemContainer = createContainer( ({ taskId, text, completed, onComplete, onDelete })=> {
-  return {
-    taskId: taskId,
-    text: text,
-    completed: completed? true:false,
-    onComplete: onComplete,
-    onDelete: onDelete
-  };
-}, TaskItem);
-
-export default connect()(TaskItemContainer);
+export default connect()(TaskItem);

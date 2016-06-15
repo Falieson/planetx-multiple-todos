@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import visibilityFilter from './visibilityFilter.js';
-// import pageSkip from './pageSkip';
+import TaskLists from './TaskLists.js';
+import TaskItemsByList from './TaskItems.js';
 
 const rootReducer = combineReducers({
-  visibilityFilter,
+  TaskLists,
+  TaskItems: TaskItemsByList,
 });
 
 export default rootReducer;

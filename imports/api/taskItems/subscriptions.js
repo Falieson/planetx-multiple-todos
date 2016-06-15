@@ -9,7 +9,7 @@
 import { Meteor } from 'meteor/meteor';
 import { collectionsSubscribe } from '../helpers/subscriptions.js'
 
-const all = (filter)=> collectionsSubscribe('taskItems', filter);
-const select = (filter, target)=> collectionsSubscribe('taskItemsForList', filter, target);
+const all = (filters)=> collectionsSubscribe('taskItems', filters);
+const select = (filters, target)=> collectionsSubscribe('taskItemsForList', filters, target);
 
 export const TaskItemSubs = {find: { all, select }};

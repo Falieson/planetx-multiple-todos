@@ -1,8 +1,9 @@
 /*
   functions exported from this file are used in
-  *  methods.js
-  *  server/publications.js
-  *  *.tests.js
+  *  methods
+  *  server/publications
+  *  tests
+  *  ui/components
 */
 
 import { Meteor } from 'meteor/meteor';
@@ -13,7 +14,7 @@ import { Lists } from './collections.js';
 import { TaskItemViews } from '../taskItems/views.js';
 
 
-const getQuery = (filter, options)=> {
+const getQuery = (options)=> {
   let query = {
     _id: {$ne: "init"},
     $or: [
@@ -28,44 +29,42 @@ const getQuery = (filter, options)=> {
     query = {...options, ...query};
   }
 
-  switch (filter) {
-    case 'SHOW_COMPLETED':
-      query.completed = true;
-      break;
-    case 'SHOW_ACTIVE':
-      query.completed = false;
-      break;
-    case 'SHOW_ONE':
-      query.completed = false;
-      query._id = options.listId;
-      break;
-    default:
-      break; // no changes to query
-  }
+  // switch (filter) {
+  //   case 'SHOW_ACTIVE':
+  //     query.completed = false;
+  //     break;
+  //   case 'SHOW_ONE':
+  //     query._id = options.listId;
+  //     break;
+  //   default:
+  //     break; // no changes to query
+  // }
+
+  // console.log("QUERY 1-> ", query);
 
   return query;
 }
 
 const taskListFields = {_id: 1, title: 1};
-const all = (filter)=> {
+const all = ()=> {
   if(Meteor.isClient){
-    return Lists.find(getQuery(filter), taskListFields).fetch();
+    return Lists.find(getQuery(), taskListFields).fetch();
   } else {
-    return Lists.find(getQuery(filter), taskListFields);
+    return Lists.find(getQuery(), taskListFields);
   }
 };
-const one = (filter, target) => {
+const one = ( target) => {
   const options = {_id: target};
   if(Meteor.isClient){
-    return Lists.findOne(getQuery(filter, options), taskListFields);
+    return Lists.findOne(getQuery( options), taskListFields);
   } else {
-    return Lists.find(getQuery(filter, options), taskListFields);
+    return Lists.find(getQuery( options), taskListFields);
   }
 };
-const tasksFor = (filter, listId)=> {
+const tasksFor = ( listId)=> {
   const options = {listId};
   if(Meteor.isClient){
-    return TaskItemViews.find.select(filter, options);
+    return TaskItemViews.find.select( options);
   } else {
     return Tasks.find({listId: listId});
   }

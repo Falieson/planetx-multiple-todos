@@ -33,16 +33,9 @@ export default class CompleteTaskItem extends Component {
   }
 
   renderIcon() {
-    const style = {
-      width: 20,
-      height: 20,
-    };
-    // const tooltip = (state)=> state? "Not Finished" : "Complete";
-
     return (
       <Done
         color={green500}
-        style={style}
         onTouchTap={this.handleComplete.bind(this)}
       />
     );

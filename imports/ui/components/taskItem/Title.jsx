@@ -10,7 +10,7 @@ export default class TaskTitle extends Component {
 
     this.state = {
       title: this.props.title,
-      completed: this.props.completed,
+      isCompleted: this.props.isCompleted,
     }
   }
 
@@ -26,12 +26,12 @@ export default class TaskTitle extends Component {
       cursor: "default",
     }
     return (
-      <span style={this.state.completed? completeStyle : incompleteStyle}>{this.state.title}</span>
+      <span style={this.state.isCompleted? completeStyle : incompleteStyle}>{this.state.title}</span>
     );
   }
 }
 
 TaskTitle.propTypes = {
   title: PropTypes.string.isRequired,
-  completed: PropTypes.bool.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
 };

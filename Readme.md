@@ -24,6 +24,10 @@ This branch is a little more verbose than my typical commits because it is writt
 
 <!-- /TOC -->
 
+**Target Audience**
+`Meteor 1.2 Devs learning 1.3, React, and Apollo`
+**Major Packages**
+`React, Redux, React-Komposer, Meteor 1.3, babel/webpack`
 
 # About
 This meteor app can be used as a boilerplate for starting a large scale production application. The major libraries are: React, Apollo, & Material. The imports directory contains a basic Todos application which can be used as example / sample code for your app. Other tutorials typically focus on a SPA application, but this is designed to be a Multipage boilerplate used for a real world application that will eventually have a team of developers.
@@ -35,7 +39,8 @@ I have structured the app for a verbose file structure. A collaborative developm
 Running the provided application provides a router, accounts system, and a simple todos app. The app displays a user's "List of Tasks" on the home page and a profile page is accessible to registered users.
 
 ### Screenshots
-![Screenshot](docs/images/planetx_branch-5-B_custom_task_redux.png)
+![Screenshot](docs/images/planetx_branch-5-B_taskList-toggle-showCompleted.png)
+![Screenshot](docs/images/planetx_branch-5-B_task-goal-menu.png)
 
 ### Caveats
 I've been using Meteor for 1-year, which means that there are a lot of new changes in 1.3 and standards that have evolved while I was working with v=<1.2 . Making this boilerplate helps me in many ways, but most of all, to understand new standards that haven't solidified into common practice. If you have more than a year of production team engineering experience then you probably know more than me (so any Issues or PRs are appreciated). If you are experienced you will also understand who I'm building this boilerplate for.

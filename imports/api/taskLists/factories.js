@@ -9,7 +9,7 @@ import './factories.js';
 export default Factory.define('taskList', Lists, {
   createdAt:  new Date(),
   title:      ()=> faker.company.companyName(),
-  taskIds:      [],
+  taskIds:    [],
 });
 
 // const newTask = (listId, options)=> {

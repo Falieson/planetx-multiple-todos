@@ -1,20 +1,19 @@
-import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
+import DevTools from '../../../dev/reduxTools.js';
+
 import { connect }  from 'react-redux';
 import React, { Component, PropTypes } from 'react';
 import reactMixin from 'react-mixin';
-import _ from 'lodash'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Paper from 'material-ui/Paper';
 import {List} from 'material-ui/List';
 
+import TaskItems from '../../containers/TaskItems.jsx';
 import TaskHeader from './Header.jsx';
-import TaskItems from './Items.jsx';
-import NewTaskItem from './NewItem.jsx';
 
-import { insertTask } from '../../../api/taskItems/methods.js';
+import NewTaskItem from './NewItem.jsx';
+import { addTaskItemToList } from '../../actions/Item.js'
 
 // Task List component - Lists out all the tasks
 class TaskList extends Component {
@@ -23,7 +22,7 @@ class TaskList extends Component {
       height: "100%",
       maxHeight: "500px",
       padding: "10px",
-      width: "300px",
+      width: "350px",
       margin: "10px",
       textAlign: 'center',
       display: 'inline-block',
@@ -38,24 +37,38 @@ class TaskList extends Component {
   }
 
   renderList() {
-    // if(this.props.listId){console.log("listId 0> ", this.props.listId);}
-
-    return (
-      <List>
-        <TaskHeader title={this.props.title} />
-        <TaskItems listId={this.props.listId} />
-        <NewTaskItem
-          listId={this.props.listId}
-          onNewTask={this.handleTaskForm}
-        />
-      </List>
-    );
+    const listId = this.props.listId;
+    if(listId && listId.length > 0){
+      const style = {
+        paddingTop: "0px",
+      };
+      return (
+        <List style={style}>
+          <DevTools />
+          <TaskHeader
+            listId={listId}
+            title={this.props.title}
+          />
+          <TaskItems
+            listId={listId}
+          />
+          <NewTaskItem
+            listId={listId}
+            onNewTask={this.handleTaskForm}
+          />
+        </List>
+      );
+    }
   }
-  handleTaskForm(event) {
-    // this.setState({ newTaskText: event.target.value });
+  handleTaskForm = event => { //this.handleTaskForm.bind(this)
+    const {
+      listId,
+      dispatch
+    } = this.props;
 
     if (event.key === 'Enter') {
-      insertTask.call({listId: this.props.listId, text: event.target.value});
+      const title = event.target.value.length>0? event.target.value:undefined;
+      dispatch(addTaskItemToList(listId, title));
       event.target.value = '';
     }
   }
@@ -63,6 +76,7 @@ class TaskList extends Component {
 
 TaskList.propTypes = {
   listId: PropTypes.string.isRequired,
-};
+  dispatch: PropTypes.func.isRequired,
+}
 
-export default TaskList;
+export default connect()(TaskList);

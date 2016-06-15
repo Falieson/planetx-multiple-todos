@@ -10,13 +10,14 @@ import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
 import { Tasks } from './collections.js';
+const debug = false;
 
-const getQuery = (filter, options)=> {
+const getQuery = (filters, options)=> {
   let query = {
     _id: {$ne: "init"},
     $or: [
       { private: { $ne: true } },
-      { owner: this && this.userId? this.userId : undefined },
+      { owner: this && this.userId? this.userId : null },
     ],
   };
 
@@ -26,55 +27,78 @@ const getQuery = (filter, options)=> {
     query = {...options, ...query};
   }
 
-  switch (filter) {
-    case 'SHOW_COMPLETED':
-      query.completed = true;
-      break;
+  switch (filters) {
     case 'SHOW_ACTIVE':
       query.completed = false;
       break;
+    case 'SHOW_COMPLETED':
+      query.completed = true;
+      break;
+    case 'SHOW_ALL':
+      if(query.completed){
+        delete query.completed;
+      }
     default:
       break;
+  }
+
+  if(debug){
+    console.log("QUERY 0-> ", query);
   }
 
   return query;
 }
 
 const taskItemFields = {_id: 1, title: 1};
-const all = (filter)=> {
-  // console.log("ITEMVIEW: all");
+const all = (filters)=> {
+  if(debug){
+    console.log("ITEMVIEW: all");
+  }
 
   if(Meteor.isClient){
-    const results = Tasks.find(getQuery(filter)).fetch();
+    const results = Tasks.find(getQuery(filters)).fetch();
     return results;
   } else {
-    const results= Tasks.find(getQuery(filter));
+    const results= Tasks.find(getQuery(filters));
     // console.log(`Publishing All (${results.count()}) Tasks: `, results.fetch());
     return results;
   }
 };
-const one = (filter, target) => {
-  // console.log("ITEMVIEW: one");
+const one = (filters, target) => {
+  if(debug){
+    console.log("ITEMVIEW: one");
+  }
 
   const options = {_id: target};
   if(Meteor.isClient){
-    return Tasks.findOne(getQuery(filter, options), taskItemFields).fetch();
+    return Tasks.findOne(getQuery(filters, options), taskItemFields).fetch();
   } else {
-    return Tasks.find(getQuery(filter, options), taskItemFields);
+    return Tasks.find(getQuery(filters, options), taskItemFields);
   }
 };
-const select = (filter, target) => {
-  // console.log("ITEMVIEW: select");
+const select = (filters, target) => {
+  if(debug){
+    console.log("ITEMVIEW: select");
+  }
 
   const options = {listId: target};
   // console.log("OPTIONS 0> ", options);
 
   if(Meteor.isClient){
-    const result = Tasks.find(getQuery(filter, options), taskItemFields).fetch();
-    return result;
+    const results = Tasks.find(getQuery(filters, options), taskItemFields).fetch();
+
+    if(debug){
+      console.log(`Retrieved ${results.length} Tasks`);
+    }
+
+    return results;
   } else {
-    const results = Tasks.find(getQuery(filter, options), taskItemFields);
-    // console.log(`Publishing Select (${results.count()}) Tasks: `, results.fetch());
+    const results = Tasks.find(getQuery(filters, options), taskItemFields);
+
+    if(debug){
+      console.log(`Publishing Select (${results.count()}) Tasks: `, results.fetch());
+    }
+
     return results;
   }
 };

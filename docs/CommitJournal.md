@@ -1,7 +1,36 @@
 # 5. Task: Update and Delete
 ### 5.B.) Task Item Expiration
-##### 5.B.2) Rebuilt Task Item as custom component
+##### 5.B.3) New Task Goal Component
 commit: `{this}`
+
+branch: `5/extraCredit/task_expiration`
+
+Message: `** broken ** 5.B.3) Create Task Goal component and Setup Redux Dev tools`
+
+Errors:
+* `FIXME: Task Item - complete button and ui state`
+* `FIXME: SetGoalBtn opens date picker dialog, but closing menu closes the date picker`
+* `Task Item - archive completed item`
+
+Notes:
+* `If I redo my commit heirarchy I will put redux into a new branch with its own commits of what I've achieved in this single commit.`
+* `After 3 weeks of testing all the different meteor react container options I finally found my preferred solution, but [TrackerComponent's this.subscriptionsReady()](https://github.com/studiointeract/tracker-component/issues/7) is broken. Even so, it's better than all the solutions made before it.`
+* `Properly using Tracker Component means using Meteor's publication api directly rather than my formula which matches my views notation.`
+* `Changes to the UI should be done optimistically, but I will save that for a later commit`
+
+References:
+* [Tracker Component - My Preferred way of Loading Data](https://github.com/studiointeract/tracker-component/)
+* [Loading Data with React, Authored 20160302](https://www.discovermeteor.com/blog/data-loading-react/)
+* [Using Meteor Methods with Redux Actions](https://medium.com/@spencer_carli/how-i-use-react-native-redux-and-meteor-b69b3875dc00#.fmzo1peu8)
+* [Advanced Redux](http://redux.js.org/docs/advanced/ExampleRedditAPI.html)
+* [Avoid often taught Anti-Pattern damaging Performance](https://medium.com/@esamatti/react-js-pure-render-performance-anti-pattern-fb88c101332f#.c2t0f3fri)
+* [ReactJS Tips for Beginners](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know)
+* [My request for help on the forums](https://forums.meteor.com/t/react-beyond-how-we-redux-how-to-visfilter-for-multiple-lists-sneak-peak-at-planetx-boilerplate/24938)
+* [Caution using Refs](https://facebook.github.io/react/docs/more-about-refs.html#cautions)
+
+
+##### 5.B.2) Rebuilt Task Item as custom component
+commit: `#ef0ab42d`
 
 branch: `5/extraCredit/task_expiration`
 
@@ -47,7 +76,6 @@ Files:
 
 References:
 *  [How-We-Redux-Todos](git+https://github.com/abhiaiyer91/How-We-Redux-Todos.git)
-
 
 
 ##### 5.B.1) Branch Init
@@ -100,7 +128,6 @@ Files:
   *  `/server/fixtures.js`
   *  `subscriptions.js`
   *  `views.js`
-
 
 
 # 4. Task: Form and Events

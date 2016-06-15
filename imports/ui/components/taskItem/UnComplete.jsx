@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { updateTask } from '../../../api/taskItems/methods.js';
 
-import { amber200 } from 'material-ui/styles/colors';
+import { amber100, amber800 } from 'material-ui/styles/colors';
 import Undo from 'material-ui/svg-icons/content/undo';
 
 // TaskItem_Complete: set complete/uncomplete
@@ -40,7 +40,8 @@ export default class UnCompleteTaskItem extends Component {
 
     return (
       <Undo
-        color={amber200}
+        color={amber100}
+        hoverColor={amber800}
         style={style}
         onTouchTap={this.handleComplete.bind(this)}
       />
